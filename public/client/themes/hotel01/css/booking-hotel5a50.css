@@ -1,0 +1,189 @@
+/**
+ * @Project NUKEVIET 4.x
+ * @Author mynukeviet (contact@mynukeviet.com)
+ * @Copyright (C) 2018 mynukeviet. All rights reserved
+ * @Createdate Tue, 30 Oct 2018 01:57:02 GMT
+ */
+h4 {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+p {
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.price {
+	font-size: 22px;
+	margin: 0 auto;
+	color: #cf0a2c;
+	font-weight: 600;
+	display: inline-block;
+}
+
+.right {
+	float: right;
+	border-bottom: 2px solid #4B8E4B;
+}
+
+/* .thumbnail { */
+/* 	opacity: 1; */
+/* 	-webkit-transition: all 0.5s; */
+/* 	transition: all 0.5s; */
+/* } */
+
+/* .thumbnail img { */
+/* 	transition: all 0.5s ease; */
+/* 	-webkit-transition: all 0.5s ease; */
+/* 	-moz-transition: all 0.5s ease; */
+/* 	-o-transition: all 0.5s ease; */
+/* } */
+
+.items_image {
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.thumbnail img {
+	width: 100%;
+}
+
+.thumbnail:hover {
+	opacity: 0.70;
+	box-shadow: 0px 0px 10px #4bc6ff;
+}
+
+/* .thumbnail:hover img { */
+/* 	transform: scale(1.5, 1.5); */
+/* 	-webkit-transform: scale(1.5, 1.5); */
+/* 	-moz-transform: scale(1.5, 1.5); */
+/* 	-o-transform: scale(1.5, 1.5); */
+/* 	-ms-transform: scale(1.5, 1.5); */
+/* } */
+
+.thumbnail:hover .items_hidden {
+	display: block !important;
+}
+
+.line {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 1px dashed #e1e1e1;
+}
+
+@media screen and (max-width: 770px) {
+	.right {
+		float: left;
+		width: 100%;
+	}
+}
+
+.items_info_room {
+	padding: 0 10px 15px 10px;
+	background-color: #fff;
+	margin-top: 15px;
+}
+
+.items_status span {
+	position: relative;
+	left: 10px;
+	padding: 0.2em 0.8em;
+	color: white;
+	background-color: darkcyan;
+	border-radius: 28px;
+}
+
+/*  Second Example with big stars */
+.rate-ex2-cnt {
+	width: 150px;
+	height: 30px;
+}
+
+.rate-ex2-cnt .rate-btn {
+	width: 30px;
+	height: 30px;
+	float: left;
+	background: url(../images/booking-hotel/rate/rate-btn1.png) no-repeat;
+	cursor: pointer;
+}
+
+.rate-ex2-cnt .rate-btn:hover, .rate-ex2-cnt  .rate-btn-hover, .rate-ex2-cnt  .rate-btn-active
+	{
+	background: url(../images/booking-hotel/rate/rate-btn1-hover.png) no-repeat;
+}
+/* End second Example with big stars */
+
+/* rate result */
+.rate-result-cnt {
+	width: 82px;
+	height: 18px;
+	position: relative;
+}
+
+.rate-stars {
+	width: 82px;
+	height: 18px;
+	background: url(../images/booking-hotel/rate/rate-stars.png) no-repeat;
+	position: absolute;
+}
+
+.rate-bg {
+	height: 18px;
+	background-color: #ffbe10;
+	position: absolute;
+}
+
+.star-icon {
+	width: 17px;
+	height: 17px;
+	background: url(../images/booking-hotel/rate/rate-btn3-hover.png) no-repeat;
+	float: left
+}
+
+.tour-info {
+	position: relative;
+}
+
+.review-result {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #FFFFC9;
+	border: 1px solid #FEBA02;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.review_comment {
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 25px;
+	-webkit-line-clamp: 1;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+.payment {
+	color: #ff0000;
+	font-weight: bold;
+	display: block;
+	margin-top: 10px;
+	border: 1px solid #ff0000;
+	padding: 3px;
+	text-transform: uppercase;
+}
+
+.box_price {
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 50px;
+	color: #ff7878;
+}
+.wid_img{
+	max-width: 20px;
+	margin-right: 5px;
+}

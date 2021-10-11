@@ -1,0 +1,105 @@
+#fanback {
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+    left: 0;
+    height: 100%;
+    position: fixed;
+    width: 100;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+#fan-exit {
+    width: 100%;
+    height: 100%;
+}
+
+#MorganAndMen {
+    background: white;
+    width: 500px;
+    position: fixed;
+    height: 500px;
+    left: 50%;
+    margin-left: -250px !important;
+    top: 50%;
+    margin-top: -250px !important;
+    -webkit-box-shadow: inset 0 0 50px 0 #939393;
+    -moz-box-shadow: inset 0 0 50px 0 #939393;
+    box-shadow: inset 0 0 50px 0 #939393;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    align-items:center;
+    justify-content: center;
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+}
+
+#TheBlogWidgets {
+    float: right;
+    cursor: pointer;
+    background: url(../images/popup/fanclose.png) repeat;
+    height: 15px;
+    padding: 20px;
+    position: relative;
+    padding-right: 10px;
+    padding-top: 10px;
+    margin-top: -15px;
+    margin-right: -12px;
+}
+
+.remove-borda {
+    height: 1px;
+    width: 366px;
+    margin: 0 auto;
+    background: #F3F3F3;
+    margin-top: 16px;
+    position: relative;
+    margin-left: 20px;
+}
+
+#linkit, #linkit a.visited, #linkit a, #linkit a:hover {
+    color: #80808B;
+    font-size: 10px;
+    margin: 0 auto 5px auto;
+    float: center;
+}
+
+.popup_content {
+    overflow: hidden;
+        padding: 0 15px;
+    width: 100% !important;
+    height: 100%;
+    display: block;
+    /* position: relative; */
+    
+}
+@media screen and (max-device-width: 1024px) {
+				.breadcrumb-inner .list-inline>li:first-child a{
+				font-size: 22px;
+				}
+ #MorganAndMen {
+								width: 100%;
+								height: auto;
+								margin-left: unset !important;
+								margin-right: unset !important;
+								margin: auto 0;
+								left: 0;
+								top: 45%;
+				}
+				#TheBlogWidgets {
+								right: 23px;
+								top: 30px;
+								position: absolute;
+								z-index: 9;
+				}
+				
+}
+@media screen and (max-device-width: 500px) {
+				.breadcrumb ul {
+								margin-top: 70%;
+				}
+}
