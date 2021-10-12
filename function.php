@@ -9,32 +9,20 @@ function arrayGet($arr, $key, $default = '')
     return $arr[$key];
 }
 
-function uploadImage($file , $target_dir = "")
+function uploadImage($file, $target_dir = "")
 {
-
-    /// check tồn tại file trong forder:
+    // check file exists folder
     $file_name = $file["name"];
-    while (file_exists($target_dir.$file_name) === true) {
-        # code...
-        $file_name = substr_replace($file_name, substr($file_name,0,strripos($file_name,"."))."_".rand(0,100), 0 , strripos($file_name,"."));
+    while (file_exists($target_dir . $file_name) === true) {
+        $file_name = substr_replace($file_name, substr($file_name, 0, strripos($file_name, ".")) . "_" . rand(0, 100), 0, strripos($file_name, "."));
     }
     //upload
-    if (move_uploaded_file($file["tmp_name"], $target_dir.$file_name)) {
-        return $target_dir.$file_name;
-    }
-    else {
+    if (move_uploaded_file($file["tmp_name"], $target_dir . $file_name)) {
+        return $target_dir . $file_name;
+    } else {
         return "";
     }
 }
-function Unlink_file_image($file)
-{
-    # code...
-    if (file_exists($file)) {
-        # code...
-        unlink($file);
-    }
-}
-
 
 function loadError($name = 404, $data = [])
 {
@@ -47,17 +35,18 @@ function asset($path)
     return WEB_ROOT . '/public/' . ltrim($path, '/');
 }
 
-function activeMenu($str){
+function activeMenu($str)
+{
     $url = arrayGet($_SERVER, 'PATH_INFO', '/');
 
-    $path = str_replace('/' ,'\/' , $str);
-    if(preg_match("/^$path$/" , $url)){
+    $path = str_replace('/', '\/', $str);
+    if (preg_match("/^$path$/", $url)) {
         return 'active';
     }
     return '';
 }
 
-function create_slug($string)
+function createSlug($string)
 {
     $search = array(
         '#(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)#',

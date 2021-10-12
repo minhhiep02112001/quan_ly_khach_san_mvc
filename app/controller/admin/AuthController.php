@@ -12,24 +12,28 @@ use Core\Request;
 class AuthController extends Controller
 {
     private $_db;
+
     function __construct()
     {
         $this->_db = new Database();
     }
 
-    function login(){
-        if(isset($_SESSION['admin.login'])){
+    function login()
+    {
+        if (isset($_SESSION['admin.login'])) {
             header("Location:/admin");
             exit();
         }
         $this->render('admin/page/auth/login');
     }
-    function postLogin(){
+
+    function postLogin()
+    {
         $request = new Request();
 
         $request->rule([
             'email' => 'required|email',
-            'password' =>'required|min:6',
+            'password' => 'required|min:6',
         ]);
 
         $request->message([
@@ -41,9 +45,9 @@ class AuthController extends Controller
 
         $validate = $request->validate();
 
-        if(!$validate){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        if (!$validate) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -52,11 +56,11 @@ class AuthController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $user = $this->_db->table("customer")->select('id,name,email,phone,image')->where('email' ,'=' ,arrayGet($_POST,'email' ,''))
-            ->where('password' , '=' , md5(arrayGet($_POST , 'password' , '')))->find();
-        if(!$user){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        $user = $this->_db->table("customer")->select('id,name,email,phone,image')->where('email', '=', arrayGet($_POST, 'email', ''))
+            ->where('password', '=', md5(arrayGet($_POST, 'password', '')))->find();
+        if (!$user) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors['old'] = $request->getParams();
             $errors['error'] = ["Thông tin tài khoản mật khẩu không chính xác !!!"];
@@ -69,34 +73,38 @@ class AuthController extends Controller
         header("Location:/admin");
         exit();
     }
-    function logout(){
-        if(isset($_SESSION['admin.login'])){
+
+    function logout()
+    {
+        if (isset($_SESSION['admin.login'])) {
             unset($_SESSION['admin.login']);
         }
         header("Location:/admin/login");
         exit();
     }
 
-    function information(){
-        if(!isset($_SESSION['admin.login'])){
+    function information()
+    {
+        if (!isset($_SESSION['admin.login'])) {
             header("Location:/admin/login");
             exit();
         }
 
-        $this->render('admin/__index',[
-            'page'=>'auth/information',
+        $this->render('admin/index', [
+            'page' => 'auth/information',
 
         ]);
     }
 
-    function changeInformation(){
+    function changeInformation()
+    {
         $request = new Request();
 
         $request->rule([
-            'name' =>'required',
-            'email' => 'required|email|unique:customer,email,'.$_SESSION['admin.login']['id'],
-            'password' =>'nullable|min:6',
-            'phone' =>'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone,'.$_SESSION['admin.login']['id'],
+            'name' => 'required',
+            'email' => 'required|email|unique:customer,email,' . $_SESSION['admin.login']['id'],
+            'password' => 'nullable|min:6',
+            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone,' . $_SESSION['admin.login']['id'],
             'image' => 'nullable|image|size:2000000'
         ]);
 
@@ -115,9 +123,9 @@ class AuthController extends Controller
 
         $validate = $request->validate();
 
-        if(!$validate){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        if (!$validate) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -127,39 +135,38 @@ class AuthController extends Controller
             exit();
         }
         $data = [
-            'name'=>arrayGet($_POST , 'name' ),
-            'email'=>arrayGet($_POST , 'email' ),
-            'phone'=>arrayGet($_POST , 'phone' ),
-            'active'=>arrayGet($_POST , 'active' ,0 ),
+            'name' => arrayGet($_POST, 'name'),
+            'email' => arrayGet($_POST, 'email'),
+            'phone' => arrayGet($_POST, 'phone'),
+            'active' => arrayGet($_POST, 'active', 0),
         ];
 
-        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
+        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
             $image = uploadImage($_FILES['image'], './public/upload/user/');
             @unlink($_SESSION['admin']['image']);
-            $data['image']=$image;
+            $data['image'] = $image;
         }
 
-        if($_POST['password'] != ""){
+        if ($_POST['password'] != "") {
             $data['password'] = md5($_POST['password']);
         }
         $customer = $this->model("Customer");
 
-        $record = $customer->updateRecord('id' , $_SESSION['admin.login']['id'] , $data);
-        if(!$record){
+        $record = $customer->updateRecord('id', $_SESSION['admin.login']['id'], $data);
+        if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
-                "err" => "Lỗi ! Không thể sửa bản ghi "
+                "err" => "Lỗi ! Không thể sửa bản ghi"
             ];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $_SESSION['admin.login'] =  $this->_db->table("customer")->select('id,name,email,phone,image')->where('id' ,'=' ,$_SESSION['admin.login']['id'])->find();
+        $_SESSION['admin.login'] = $this->_db->table("customer")->select('id,name,email,phone,image')
+            ->where('id', '=', $_SESSION['admin.login']['id'])->find();
 
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
         header("Location:/admin/information");
         exit();
     }

@@ -53,7 +53,7 @@ class RoomController extends Controller
         $page =  new Pagination($config);
 
 
-        $this->render('admin/__index',[
+        $this->render('admin/index',[
             'page'=>'room/index',
             'rooms'=> $data['data'],
             'paginate' => $page,
@@ -62,7 +62,7 @@ class RoomController extends Controller
     }
 
     function create(){
-        $this->render('admin/__index',[
+        $this->render('admin/index',[
             'page'=> 'room/create'
         ]);
     }
@@ -104,7 +104,7 @@ class RoomController extends Controller
         }
         $data = [
             'title'=>arrayGet($_POST , 'title' ),
-            'slug'=> create_slug(arrayGet($_POST , 'title' )) ,
+            'slug'=> createSlug(arrayGet($_POST , 'title' )) ,
             'summary'=>arrayGet($_POST , 'summary' ),
             'active'=>arrayGet($_POST , 'active' ,0 ),
             'price'=>arrayGet($_POST , 'price' ,0 ),
@@ -125,9 +125,7 @@ class RoomController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
         header("Location:/admin/room");
         exit();
 
@@ -138,7 +136,7 @@ class RoomController extends Controller
         if(!$room){
             return loadError();
         }
-        $this->render('admin/__index',[
+        $this->render('admin/index',[
             'page'=>'room/edit',
             'room'=>$room
         ]);
@@ -186,7 +184,7 @@ class RoomController extends Controller
 
         $data = [
             'title'=>arrayGet($_POST , 'title' ),
-            'slug'=> create_slug(arrayGet($_POST , 'title' )) ,
+            'slug'=> createSlug(arrayGet($_POST , 'title' )) ,
             'summary'=>arrayGet($_POST , 'summary' ),
             'active'=>arrayGet($_POST , 'active' ,0 ),
             'price'=>arrayGet($_POST , 'price' ,0 ),
@@ -207,16 +205,14 @@ class RoomController extends Controller
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
-                "err" => "Lỗi ! Không thể sửa bản ghi "
+                "err" => "Lỗi ! Không thể sửa bản ghi"
             ];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
 
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
         header("Location:/admin/room");
         exit();
     }

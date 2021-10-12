@@ -10,29 +10,32 @@ use Core\Request;
 
 class CustomerController extends Controller
 {
-    private $_config ;
+    private $_config;
     protected $_db;
+
     public function __construct()
     {
         global $config;
-        if(!isset($_SESSION['admin.login'])){
+        if (!isset($_SESSION['admin.login'])) {
             header("Location:/admin/login");
             exit();
         }
         $this->_config = $config;
         $this->_db = $this->model('Customer');
     }
-    function index(){
+
+    function index()
+    {
         $page = ($_REQUEST['page']) ?? 1;
         $limit = $this->_config['pagination']['limit'];
-        $start = ( $page - 1 ) * $limit;
+        $start = ($page - 1) * $limit;
         unset($_REQUEST['page']);
 
-        $data_search=[]; /// tìm kiếm
+        $data_search = []; /// tìm kiếm
         if (count($_REQUEST) > 0) {
             $url_param = ""; /// parameter url pagination
             foreach ($_REQUEST as $key => $value) {
-                if(empty($value)){
+                if (empty($value)) {
                     continue;
                 }
                 $data_search[$key] = $value;
@@ -40,7 +43,7 @@ class CustomerController extends Controller
             }
         }
 
-        $data = $this->_db->getAll( $data_search ,$limit , $start);
+        $data = $this->_db->getAll($data_search, $limit, $start);
 
         $config = [
             'total' => $data['total'] ?? 0,
@@ -50,31 +53,33 @@ class CustomerController extends Controller
             'param' => $url_param ?? ""
         ];
 
-        $page =  new Pagination($config);
+        $page = new Pagination($config);
 
 
-        $this->render('admin/__index',[
-            'page'=>'customer/index',
-            'customers'=> $data['data'],
+        $this->render('admin/index', [
+            'page' => 'customer/index',
+            'customers' => $data['data'],
             'paginate' => $page,
             'start' => $start
         ]);
     }
 
-    function create(){
-        $this->render('admin/__index',[
-            'page'=> 'customer/create'
+    function create()
+    {
+        $this->render('admin/index', [
+            'page' => 'customer/create'
         ]);
     }
 
-    function store(){
+    function store()
+    {
         $request = new Request();
 
         $request->rule([
-            'name' =>'required',
+            'name' => 'required',
             'email' => 'required|email|unique:customer,email',
-            'password' =>'required|min:6',
-            'phone' =>'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone',
+            'password' => 'required|min:6',
+            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone',
             'image' => 'image|size:2000000'
         ]);
 
@@ -94,9 +99,9 @@ class CustomerController extends Controller
 
         $validate = $request->validate();
 
-        if(!$validate){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        if (!$validate) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -105,21 +110,21 @@ class CustomerController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
+        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
             $image = uploadImage($_FILES['image'], './public/upload/customer/');
         }
         $data = [
-            'name'=>arrayGet($_POST , 'name' ),
-            'email'=>arrayGet($_POST , 'email' ),
-            'phone'=>arrayGet($_POST , 'phone' ),
-            'active'=>arrayGet($_POST , 'active' ,0 ),
-            'password'=>md5(arrayGet($_POST , 'password')),
-            'image'=> $image ??'',
+            'name' => arrayGet($_POST, 'name'),
+            'email' => arrayGet($_POST, 'email'),
+            'phone' => arrayGet($_POST, 'phone'),
+            'active' => arrayGet($_POST, 'active', 0),
+            'password' => md5(arrayGet($_POST, 'password')),
+            'image' => $image ?? '',
         ];
 
         $record = $this->_db->create($data);
 
-        if(!$record){
+        if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
@@ -129,40 +134,40 @@ class CustomerController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:/admin/customer");
         exit();
 
     }
 
-    public  function edit($id){
+    public function edit($id)
+    {
         $user = $this->_db->findId($id);
-        if(!$user){
+        if (!$user) {
             return loadError();
         }
-        $this->render('admin/__index',[
-            'page'=>'customer/edit',
-            'user'=>$user
+        $this->render('admin/index', [
+            'page' => 'customer/edit',
+            'user' => $user
         ]);
     }
 
-    public function update($id){
+    public function update($id)
+    {
 
         $user = $this->_db->findId($id);
 
-        if(!$user){
+        if (!$user) {
             return loadError();
         }
 
         $request = new Request();
 
         $request->rule([
-            'name' =>'required',
-            'email' => 'required|email|unique:customer,email,'.$id,
-            'password' =>'nullable|min:6',
-            'phone' =>'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone,'.$id,
+            'name' => 'required',
+            'email' => 'required|email|unique:customer,email,' . $id,
+            'password' => 'nullable|min:6',
+            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone,' . $id,
             'image' => 'nullable|image|size:2000000'
         ]);
 
@@ -181,9 +186,9 @@ class CustomerController extends Controller
 
         $validate = $request->validate();
 
-        if(!$validate){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        if (!$validate) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -194,56 +199,52 @@ class CustomerController extends Controller
         }
 
         $data = [
-            'name'=>arrayGet($_POST , 'name' ),
-            'email'=>arrayGet($_POST , 'email' ),
-            'phone'=>arrayGet($_POST , 'phone' ),
-            'active'=>arrayGet($_POST , 'active' ,0 ),
+            'name' => arrayGet($_POST, 'name'),
+            'email' => arrayGet($_POST, 'email'),
+            'phone' => arrayGet($_POST, 'phone'),
+            'active' => arrayGet($_POST, 'active', 0),
         ];
 
-        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
+        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
             $image = uploadImage($_FILES['image'], './public/upload/user/');
             @unlink($user['image']);
-            $data['image']=$image;
+            $data['image'] = $image;
         }
 
-        if($_POST['password'] != ""){
+        if ($_POST['password'] != "") {
             $data['password'] = md5($_POST['password']);
         }
 
-        $record = $this->_db->updateRecord('id' , $id , $data);
-        if(!$record){
+        $record = $this->_db->updateRecord('id', $id, $data);
+        if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
-                "err" => "Lỗi ! Không thể sửa bản ghi "
+                "err" => "Lỗi ! Không thể sửa bản ghi"
             ];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
 
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:/admin/customer");
         exit();
     }
-    public function destroy($id){
+
+    public function destroy($id)
+    {
         $user = $this->_db->findId($id); /// kiểm tra tồn tại user
-        if(!$user){
+        if (!$user) {
             return loadError();
         }
 
-        if($this->_db->deleteRecord('id' , $id)){
-            $_SESSION['success'] = [
-                'status' => 'Success !!!'
-            ];
+        if ($this->_db->deleteRecord('id', $id)) {
+            $_SESSION['success'] = ['status' => 'Success !!!'];
             header("Location:/admin/customer");
             exit();
-        }else{
-            $_SESSION['success'] = [
-                'error' => 'Error !!!'
-            ];
+        } else {
+            $_SESSION['success'] = ['error' => 'Error !!!'];
             header("Location:/admin/customer");
             exit();
         }

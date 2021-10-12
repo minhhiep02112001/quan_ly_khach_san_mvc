@@ -80,120 +80,7 @@
     <div class="alert alert-danger">Trình duyệt của bạn đã tắt chức năng hỗ trợ JavaScript.<br />Website chỉ làm việc khi bạn bật nó trở lại.<br />Để tham khảo cách bật JavaScript, hãy click chuột <a href="http://wiki.nukeviet.vn/support:browser:enable_javascript">vào đây</a>!</div>
 </noscript>
 <body class="cnt-home">
-<div class="responsive-header">
-    <div class="res-logo-area">
-        <div class="col-sm-18 col-xs-16">
-            <div class="logoresponsive">
-                <a title="ATR Hotel" href="index.html"><img
-                        src="./public/client/uploads/logo_1.png" alt="ATR Hotel" /></a>
-            </div>
-        </div>
-        <ul class="language">
-            <li class="active"><a href="index.html" title="Tiếng Việt" /><img src="./public/client/themes/hotel01/images/icons/flags/vi.png" width="20" /></a></li>
-            <li><a href="http://bookinghotel.mynukeviet.com/en/" title="English" /><img src="./public/client/themes/hotel01/images/icons/flags/en.png" width="20" /></a></li>
-        </ul>
-        <div class="col-sm-6 col-xs-8">
-            <div id="nav-icons-head">
-                <span></span> <span></span> <span></span> <span></span>
-            </div>
-        </div>
-    </div>
-    <div class="responsive-menu">
-        <a title="ATR Hotel" href="index.html"><img
-                src="./public/client/uploads/logo_1.png" alt="ATR Hotel" /></a></a>
-
-        <ul>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="about/index.html" title="Giới thiệu">Giới thiệu</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="news/index.html" title="Tin Tức">Tin Tức</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="booking-hotel/index.html" title="Cho thuê căn hộ">Cho thuê căn hộ</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="dich-vu/index.html" title="Dịch vụ">Dịch vụ</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="hop-dap/index.html" title="Hỏi đáp">Hỏi đáp</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="guide-tourist/index.html" title="Hướng dẫn">Hướng dẫn</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="users/index.html" title="Thành viên">Thành viên</a>
-            </li>
-            <li class="menu-item-has-children"
-                rol="presentation">
-                <a href="contact/index.html" title="Liên hệ">Liên hệ</a>
-            </li>
-        </ul>
-        <div class="res-social">
-            <a href="#" onclick="modalShowByObj('#guestLogin_nv8', 'recaptchareset')">Thành viên đăng nhập</a>
-
-            <a href="users/register/index.html">Đăng ký</a>
-        </div>
-    </div>
-</div>
-<header class="header-area fixed header-sticky hidden-xs hidden-sm hidden-md">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-sm-8 col-xs-24">
-                <div class="logo">
-                    <a title="ATR Hotel" href="index.html"><img src="./public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" /></a>
-                    <h1 class="hidden">ATR Hotel</h1>
-                    <h2 class="hidden">Website dành riêng cho hệ thống khách sạn trên toàn quốc.</h2>
-                </div>
-            </div>
-            <div class="col-md-16 col-sm-16 col-xs-16 hidden-xs">
-                <div class="header-top fix">
-                    <div class="header-contact">
-                        <div class="list-unstyled"><span><span style="font-size:16px;">Hotline</span>:</span><span><a href="tel:+84905.908430">090.5908430</a></span></div>
-
-                    </div>
-                    <div class="header-links">
-                        <ul class="language">
-                            <li class="active"><a href="index.html" title="Tiếng Việt" /><img src="./public/client/themes/hotel01/images/icons/flags/vi.png" width="20" /></a></li>
-                            <li><a href="http://bookinghotel.mynukeviet.com/en/" title="English" /><img src="./public/client/themes/hotel01/images/icons/flags/en.png" width="20" /></a></li>
-                        </ul>
-                        <a href="#" onclick="modalShowByObj('#guestLogin_nv29', 'recaptchareset')">Thành viên đăng nhập</a>
-
-                        <a href="users/register/index.html">Đăng ký</a>
-                    </div>
-                </div>
-                <div class="main-menu hidden-xs">
-                    <nav>
-                        <ul>
-                            <li  role="presentation"><a  href="about/index.html" title="Giới thiệu">Giới thiệu</a>
-                            </li>
-                            <li  role="presentation"><a  href="news/index.html" title="Tin Tức">Tin Tức</a>
-                            </li>
-                            <li  role="presentation"><a  href="booking-hotel/index.html" title="CĂN HỘ CHO THUÊ">CĂN HỘ CHO THUÊ</a>
-                            </li>
-                            <li  role="presentation"><a  href="dich-vu/index.html" title="Dịch vụ">Dịch vụ</a>
-                            </li>
-                            <li  class="dropdown" role="presentation"><a  href="http://bookinghotel.mynukeviet.com/contact" title="Liên hệ">Liên hệ</a>
-                                <ul class="submenu megamenu">
-                                    <li>
-                                        <a href="contact/Cham-soc-khach-hang/index.html" title="Phòng Chăm sóc khách hàng">Phòng Chăm sóc khách hàng</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<?php include_once 'layout/_header.php'?>
 <div class="body-content " id="top-banner-and-menu">
     <section class="animated animatedFadeInUp fadeInUp featured_product">
         <div class='hero-carousel carousel-blur carousel-blur-arrows carousel-blur-pagination flexslider'>
@@ -250,15 +137,15 @@
         </div>
         <section class="wow animated animatedFadeInUp fadeInUp search_row container search_contain">
             <div class="book-form overlay-black-dark bg-img-fix p-t70 mid">
-                <form class=" row_search" action="#" method="get">
+                <form class=" row_search" id="form-search" action="./search" method="get">
                     <div class="col-md-10 col-sm-8 col-12  form-group infontform selectday">
-                        <input class="form-control datepicker datetimepicker4" type="text" name="search_daystart" value="04/10/2021" readonly="readonly" placeholder="" />
+                        <input class="form-control datepicker datetimepicker4" type="text" id="start_day" name="start" value="04/10/2021" readonly="readonly" placeholder="" />
                     </div>
                     <div class="col-md-10 col-sm-8 col-12   form-group infontform selectday">
-                        <input class="form-control datepicker datetimepicker4" type="text" name="search_dayend" value="04/10/2021" readonly="readonly" placeholder="" />
+                        <input class="form-control datepicker datetimepicker4" type="text" id="end_day" name="end" value="04/10/2021" readonly="readonly" placeholder="" />
                     </div>
                     <div class="col-md-4 col-sm-8 col-12 col-lg-4 form-group submitbutton">
-                        <button type="submit" value="Tìm kiếm" class="site-button btn-block">Tìm kiếm</button>
+                        <button type="submit" value="Tìm kiếm" class="site-button btn-block btn-search">Tìm kiếm</button>
                     </div>
                 </form>
             </div>
@@ -278,14 +165,14 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image ">
-                                                <a href="booking-hotel/Lau-2/Can-ho-823-02-phong-ngu.html" title="" class="effect-chico box_ribbon">
+                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html" title="" class="effect-chico box_ribbon">
                                                     <img alt="" src="<?=$item['image']?>" />
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="blog-post-info text-left">
                                             <h3 class="name name-h3">
-                                                <a href="booking-hotel/Lau-2/Can-ho-823-02-phong-ngu.html" title=""><?=$item['title']?></a>
+                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html" title=""><?=$item['title']?></a>
                                             </h3>
 
                                             <div class="ratings"></div>
@@ -303,7 +190,7 @@
                                             </div>
                                             <div class="col-md-24 col-sm-24 text-center ">
                                                 <hr class="line">
-                                                <a href="booking-hotel/Lau-2/Can-ho-823-02-phong-ngu.html#booking" class="btn btn-primary pull-left">ĐẶT PHÒNG</a>
+                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html#booking" class="btn btn-primary pull-left">ĐẶT PHÒNG</a>
 <!--                                                <div class="div_icon_wid">-->
 <!--												<span class="box_icon_wid box_icon_wid_hefl hidden">  <span title="WI_FI" class="pointer"><img data-toggle='tooltip' data-placement='top' title='WI_FI' class='wid_img' src=./public/client/uploads/booking-hotel/wf.png></span>  <span title="Tủ lạnh" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Tủ lạnh' class='wid_img' src=./public/client/uploads/booking-hotel/tl.png></span>  <span title="Phòng tập GYM" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Phòng tập GYM' class='wid_img' src=./public/client/uploads/booking-hotel/gm.png></span>  <span title="Phòng xong hơi" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Phòng xong hơi' class='wid_img' src=./public/client/uploads/booking-hotel/xh.jpg></span>  <span title="Bàn ăn" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Bàn ăn' class='wid_img' src=./public/client/uploads/booking-hotel/ba.png></span>  <span title="Truyền hình" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Truyền hình' class='wid_img' src=./public/client/uploads/booking-hotel/tivi.png></span>-->
 <!--											</span>-->
@@ -332,14 +219,14 @@
                         <div class="blog-post">
                             <div class="blog-post-image mg-bottom-10">
                                 <div class="image">
-                                    <a href="news/Tin-tuc/lan-song-tang-von-cap-2-cua-cac-ngan-hang-25.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng" class="effect-chico">
-                                        <img height="200px" src="<?= $item['image']?>" alt="Làn sóng tăng vốn cấp 2 của các ngân hàng">
+                                    <a href="./article/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng" class="effect-chico">
+                                        <img style="height: 200px;" src="<?= $item['image']?>" alt="Làn sóng tăng vốn cấp 2 của các ngân hàng">
                                     </a>
                                 </div>
                             </div>
                             <div class="blog-post-info text-left">
                                 <h3 class="name">
-                                    <a href="news/Tin-tuc/lan-song-tang-von-cap-2-cua-cac-ngan-hang-25.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng"><?= $item['title']?></a>
+                                    <a href="./article/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng"><?= $item['title']?></a>
                                 </h3>
                                 <span class="info">14:52 22/11/2018 </span>
                                 <p class="text"><?= $item['summary']?></p>
@@ -965,6 +852,25 @@
     src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script
     src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
+
+<!--Js search room-->
+<script>
+    $(document).ready(function () {
+        var date = new Date();
+        $("#start_day").val(date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear());
+        $("#end_day").val(date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear());
+    })
+
+    $("#form-search").submit(function (event) {
+        var start = $(this).find('#start_day').val();
+        var end = $(this).find('#end_day').val();
+        if(start > end){
+            alert("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            return false;
+        }
+        return true;
+    });
+</script>
 
 </body>
 <!-- SiteModal Required!!! -->

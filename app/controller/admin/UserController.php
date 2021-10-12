@@ -55,7 +55,7 @@ class UserController extends Controller
         $page =  new Pagination($config);
 
 
-        $this->render('admin/__index',[
+        $this->render('admin/index',[
             'page'=>'user/index',
             'users'=> $data['data'],
             'paginate' => $page,
@@ -64,7 +64,7 @@ class UserController extends Controller
     }
 
     function create(){
-        $this->render('admin/__index',[
+        $this->render('admin/index',[
             'page'=> 'user/create'
         ]);
     }
@@ -131,9 +131,7 @@ class UserController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
         header("Location:/admin/user");
         exit();
 
@@ -144,7 +142,7 @@ class UserController extends Controller
         if(!$user){
             return loadError();
         }
-        $this->render('admin/__index',[
+        $this->render('admin/index',[
             'page'=>'user/edit',
             'user'=>$user
         ]);
@@ -217,16 +215,14 @@ class UserController extends Controller
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
-                "err" => "Lỗi ! Không thể sửa bản ghi "
+                "err" => "Lỗi ! Không thể sửa bản ghi"
             ];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
 
-        $_SESSION['success'] = [
-            'status' => 'Success !!!'
-        ];
+        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
         header("Location:/admin/user");
         exit();
     }

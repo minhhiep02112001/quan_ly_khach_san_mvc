@@ -1,7 +1,12 @@
 <?php
 
 $route = [
+
+    // Client
     '/' => ['method' => 'GET', 'use' => 'ClientController@home'],
+    'room/.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailRoom'],
+    'article/.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailArticle'],
+    'search' => ['method' => 'GET', 'use' => 'ClientController@search'],
 
     // Admin Login
     'admin/login'=>['method' => 'GET', 'use' => 'admin/AuthController@login'],
@@ -14,13 +19,14 @@ $route = [
 
     //Route thống kê:
     'admin'=>['method' => 'GET', 'use' => 'admin/DashboardController@index'],
+    'admin/ajax/chart'=>['method' => 'POST', 'use' => 'admin/DashboardController@chart'], // ajax
 
-    // route quản trị đặt phòng :
+    // route administration book room  :
     'admin/order'=>['method' => 'GET', 'use' => 'admin/OrderController@index'],
     'admin/order/show/(\d+)'=>['method' => 'GET', 'use' => 'admin/OrderController@show'],
     'admin/order/update/(\d+)'=>['method' => 'GET', 'use' => 'admin/OrderController@update'],
 
-    // route quản trị khách hàng
+    // route administration user :
     'admin/user'=>['method' => 'GET', 'use' => 'admin/UserController@index'],
     'admin/user/create'=>['method' => 'GET', 'use' => 'admin/UserController@create'],
     'admin/user/store'=>['method' => 'POST', 'use' => 'admin/UserController@store'],
@@ -28,7 +34,7 @@ $route = [
     "admin/user/update/(\d+)"=> ['method'=>"POST" , "use"=>'admin/UserController@update' , "param" => '$1' ],
     "admin/user/delete/(\d+)"=> ['method'=>"GET" , "use"=>'admin/UserController@destroy' , "param" => '$1' ],
 
-    // route quản trị nhân viên
+    // route administration customer :
     'admin/customer'=>['method' => 'GET', 'use' => 'admin/CustomerController@index'],
     'admin/customer/create'=>['method' => 'GET', 'use' => 'admin/CustomerController@create'],
     'admin/customer/store'=>['method' => 'POST', 'use' => 'admin/CustomerController@store'],
@@ -36,15 +42,15 @@ $route = [
     "admin/customer/update/(\d+)"=> ['method'=>"POST" , "use"=>'admin/CustomerController@update' , "param" => '$1' ],
     "admin/customer/delete/(\d+)"=> ['method'=>"GET" , "use"=>'admin/CustomerController@destroy' , "param" => '$1' ],
 
-   //  route quản trị bài viết
+   //  route administration article :
     'admin/article'=>['method' => 'GET', 'use' => 'admin/ArticleController@index'],
     'admin/article/create'=>['method' => 'GET', 'use' => 'admin/ArticleController@create'],
     'admin/article/store'=>['method' => 'POST', 'use' => 'admin/ArticleController@store'],
     "admin/article/edit/(\d+)"=> ['method'=>"GET" , "use"=>'admin/ArticleController@edit' , "param" => '$1' ],
     "admin/article/update/(\d+)"=> ['method'=>"POST" , "use"=>'admin/ArticleController@update' , "param" => '$1' ],
     "admin/article/delete/(\d+)"=> ['method'=>"GET" , "use"=>'admin/ArticleController@destroy' , "param" => '$1' ],
-//
-    // route quản trị phòng
+
+    // route administration room :
     'admin/room'=>['method' => 'GET', 'use' => 'admin/RoomController@index'],
     'admin/room/create'=>['method' => 'GET', 'use' => 'admin/RoomController@create'],
     'admin/room/store'=>['method' => 'POST', 'use' => 'admin/RoomController@store'],
