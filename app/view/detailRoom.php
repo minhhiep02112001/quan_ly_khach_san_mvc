@@ -106,13 +106,13 @@
                         <div class="col-md-24">
                             <ul class="list-inline list-unstyled text-center">
                                 <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a
-                                            href="../index.html" itemprop="url"
+                                            href="#" itemprop="url"
                                             title="Quản lý phòng"><span class="txt"
                                                                         itemprop="title">Quản lý phòng</span></a></li>
                                 <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a
                                             href="#" itemprop="url"
                                             title="Căn hộ 822 02 phòng ngủ"><span class="txt"
-                                                                                  itemprop="title">Căn hộ 822 02 phòng ngủ</span></a>
+                                                                                  itemprop="title"><?= $room['title']?></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -150,17 +150,11 @@
                                     <h1 class="name"><?= $room['title'] ?? '' ?></h1>
                                     <div class="description-container m-t-20"><?= $room['title'] ?? '' ?></div>
                                     <div class="row">
-                                        <div class="col-md-12 col-xs-24 col-sm-24 m-bottom">
+                                        <div class="col-md-24 col-xs-24 col-sm-24 m-bottom">
                                             <div class="col-xs-24 m-t-20">
                                                 <strong>Mô tả </strong>: <?= $room['summary'] ?>
                                             </div>
-                                            <div class="col-xs-24 m-t-20">
-                                                Tình trạng phòng :
-                                                <strong><?= $room['status'] ? 'Còn phòng' : 'Đã đặt' ?></strong>
-                                            </div>
-
                                         </div>
-
                                     </div>
                                     <div class="price-container info-container m-t-20">
                                         <div class="row">
@@ -175,6 +169,20 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <?php if(count($bookedDate) > 0) : ?>
+                                    <div class="row">
+                                        <div class="col-md-24 col-xs-24 col-sm-24 m-bottom">
+                                            <div class="col-xs-24 m-t-20">
+                                                <strong> Trong vòng 30 ngày bạn có thể đặt phòng trừ ngày (đã có khách đặt) :  </strong>
+                                                <ul style="padding-left: 10px;">
+                                                    <?php foreach ($bookedDate as $key): ?>
+                                                        <li> <?= date("d-m-Y", strtotime( $key['start'] )) ?> -> <?= date("d-m-Y", strtotime( $key['end'] )) ?> </li>
+                                                    <?php endforeach;?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php endif;?>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +249,7 @@
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Họ
                                                             tên <span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
-                                                            <input type="text" name="fullname" class="form-control"
+                                                            <input type="text" name="name" value="<?= $_SESSION['user.login']['name'] ?? '' ?>" class="form-control"
                                                                    id="fullname" placeholder="">
                                                         </div>
                                                     </div>
@@ -249,7 +257,7 @@
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Email
                                                             <span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
-                                                            <input type="email" name="email" class="form-control"
+                                                            <input type="email" name="email" class="form-control" value="<?= $_SESSION['user.login']['email'] ?? '' ?>"
                                                                    id="email" placeholder="">
                                                         </div>
                                                     </div>
@@ -258,15 +266,7 @@
                                                             điện thoại <span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
                                                             <input type="text" name="phone" class="form-control"
-                                                                   id="phone" placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Địa
-                                                            chỉ <span class="red">(*)</span></label>
-                                                        <div class="col-xs-24 col-sm-20">
-                                                            <input type="text" name="address" class="form-control"
-                                                                   id="address" placeholder="">
+                                                                   id="phone" value="<?= $_SESSION['user.login']['phone'] ?? '' ?>" placeholder="">
                                                         </div>
                                                     </div>
 
@@ -276,7 +276,7 @@
                                                         <div class="col-xs-24 col-sm-20">
                                                             <div class="input-group">
                                                                 <input class="form-control datepicker_booking"
-                                                                       type="text" value="04/10/2021" name="daystart"
+                                                                       type="text" value="04/10/2021" name="start_day" id="start_day"
                                                                        readonly="readonly" placeholder=""/> <span
                                                                         class="input-group-btn">
 																							<button class="btn btn-default"
@@ -293,7 +293,7 @@
                                                         <div class="col-xs-24 col-sm-20">
                                                             <div class="input-group">
                                                                 <input class="form-control datepicker_booking"
-                                                                       type="text" value="05/10/2021" name="dayend"
+                                                                       type="text" value="05/10/2021" name="end_day" id="end_day"
                                                                        readonly="readonly" placeholder=""/> <span
                                                                         class="input-group-btn">
 																							<button class="btn btn-default"
@@ -823,29 +823,7 @@
         });
     });
 
-    $('#frm-booking').submit(
-        function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: nv_base_siteurl + 'index.php?' + nv_lang_variable
-                    + '=' + nv_lang_data + '&' + nv_name_variable + '='
-                    + nv_module_name + '&' + nv_fc_variable
-                    + '=detail&nocache=' + new Date().getTime(),
-                data: $(this).serialize(),
-                dataType: 'json',
-                success: function (json) {
-                    alert(json.msg);
-                    if (json.error) {
-                        $('#' + json.input).focus();
-                        change_captcha();
-                    } else {
-                        window.location.href = json.redirect;
-                    }
-                }
-            });
-        }
-    );
+
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -954,6 +932,23 @@
         }
     }
 </script>
+
+
+<script>
+    $("#frm-booking").submit(function (event) {
+
+        var start = $(this).find('#start_day').val();
+        var end = $(this).find('#end_day').val();
+        if(start > end){
+            alert("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            return false;
+        }
+
+        return true;
+    });
+
+</script>
+
 <script
         src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script

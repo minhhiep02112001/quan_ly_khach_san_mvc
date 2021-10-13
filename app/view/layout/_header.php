@@ -66,7 +66,7 @@
         <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-24">
                 <div class="logo">
-                    <a title="ATR Hotel" href="../../index.html"><img src="./public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" /></a>
+                    <a title="ATR Hotel" href="/"><img src="./public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" /></a>
                     <span class="site_name hidden">ATR Hotel</span>
                     <span class="site_description hidden">Website dành riêng cho hệ thống khách sạn trên toàn quốc.</span>
                 </div>
@@ -77,34 +77,34 @@
                         <div class="list-unstyled"><span><span style="font-size:16px;">Hotline</span>:</span><span><a href="tel:+84905.908430">090.5908430</a></span></div>
 
                     </div>
-                    <div class="header-links">
-                        <ul class="language">
-                            <li class="active"><a href="../../index.html" title="Tiếng Việt" /><img src="./public/client/themes/hotel01/images/icons/flags/vi.png" width="20" /></a></li>
-                            <li><a href="http://bookinghotel.mynukeviet.com/en/" title="English" /><img src="./public/client/themes/hotel01/images/icons/flags/en.png" width="20" /></a></li>
-                        </ul>
-                        <a href="#" onclick="modalShowByObj('#guestLogin_nv23', 'recaptchareset')">Thành viên đăng nhập</a>
+                    <?php if(isset($_SESSION['user.login'])): ?>
+                        <div class="header-links">
 
-                        <a href="../../users/register/index.html">Đăng ký</a>
-                    </div>
+                            <a href="./information" ><?= $_SESSION['user.login']['name']?></a>
+
+                            <a href="./logout">Đăng xuất</a>
+                        </div>
+                    <?php else: ?>
+                        <div class="header-links">
+
+                            <a href="./login" >Đăng nhập</a>
+
+                            <a href="./register">Đăng ký</a>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="main-menu hidden-xs">
                     <nav>
                         <ul>
-                            <li  role="presentation"><a  href="../../about/index.html" title="Giới thiệu">Giới thiệu</a>
+                            <li  role="presentation"><a  href="/" title="Giới thiệu">Trang chủ</a>
                             </li>
-                            <li  role="presentation"><a  href="../index.html" title="Tin Tức">Tin Tức</a>
+                            <li  role="presentation"><a  href="javascript:void(0)" title="Tin Tức">Tin Tức</a>
                             </li>
-                            <li  role="presentation"><a  href="../../booking-hotel/index.html" title="CĂN HỘ CHO THUÊ">CĂN HỘ CHO THUÊ</a>
+                            <li  role="presentation"><a  href="javascript:void(0)" title="CĂN HỘ CHO THUÊ">CĂN HỘ CHO THUÊ</a>
                             </li>
-                            <li  role="presentation"><a  href="../../dich-vu/index.html" title="Dịch vụ">Dịch vụ</a>
+                            <li  role="presentation"><a  href="javascript:void(0)" title="Dịch vụ">....</a>
                             </li>
-                            <li  class="dropdown" role="presentation"><a  href="http://bookinghotel.mynukeviet.com/contact" title="Liên hệ">Liên hệ</a>
-                                <ul class="submenu megamenu">
-                                    <li>
-                                        <a href="../../contact/Cham-soc-khach-hang/index.html" title="Phòng Chăm sóc khách hàng">Phòng Chăm sóc khách hàng</a>
-                                    </li>
-                                </ul>
-                            </li>
+
                         </ul>
                     </nav>
                 </div>

@@ -157,6 +157,7 @@ class Request
                         $uniqueTable =$arrUnique[0] ?? null;
                         $uniqueColumn = $arrUnique[1] ?? null;
                         $skipRowId = $arrUnique[2] ?? null;
+
                         if(!$skipRowId){
                             $record =  $this->__db->table($uniqueTable)->where($uniqueColumn , '=' , $dataFields[$fieldName])->find();
                             if($record){

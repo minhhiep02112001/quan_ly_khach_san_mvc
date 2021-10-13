@@ -193,57 +193,6 @@ function validReset(a) {
     $(a)[0].reset()
 }
 
-function login_validForm(a) {
-    $(".has-error", a).removeClass("has-error");
-    var c = 0,
-        b = [];
-    $(a).find(".required").each(function() {
-        "password" == $(a).prop("type") && $(this).val(trim(strip_tags($(this).val())));
-        if (!validCheck(this)) return c++, $(".tooltip-current", a).removeClass("tooltip-current"), $(this).addClass("tooltip-current").attr("data-current-mess", $(this).attr("data-mess")), validErrorShow(this), !1
-    });
-    c || (b.type = $(a).prop("method"), b.url = $(a).prop("action"), b.data = $(a).serialize(), formErrorHidden(a), $(a).find("input,button,select,textarea").prop("disabled", !0), $.ajax({
-        type: b.type,
-        cache: !1,
-        url: b.url,
-        data: b.data,
-        dataType: "json",
-        success: function(d) {
-            var b = $("[onclick*='change_captcha']", a);
-            b && b.click();
-            if (d.status == "error") {
-                $("input,button", a).not("[type=submit]").prop("disabled", !1),
-                $(".tooltip-current", a).removeClass("tooltip-current"),
-                "" != d.input ? $(a).find("[name=\"" + d.input + "\"]").each(function() {
-                    $(this).addClass("tooltip-current").attr("data-current-mess", d.mess);
-                    validErrorShow(this)
-                }) : $(".nv-info", a).html(d.mess).addClass("error").show(), setTimeout(function() {
-                    $("[type=submit]", a).prop("disabled", !1);
-                    if (nv_is_recaptcha) {
-                        change_captcha();
-                    }
-                }, 1E3)
-            } else if (d.status == "ok") {
-                $(".nv-info", a).html(d.mess + '<span class="load-bar"></span>').removeClass("error").addClass("success").show(),
-                $(".form-detail", a).hide(), $("#other_form").hide(), setTimeout(function() {
-                    if( "undefined" != typeof d.redirect && "" != d.redirect){
-                         window.location.href = d.redirect;
-                    }else{
-                         $('#sitemodal').modal('hide');
-                         window.location.href = window.location.href;
-                    }
-                }, 3E3)
-            } else if (d.status == "2steprequire") {
-                $(".form-detail", a).hide(), $("#other_form").hide();
-                $(".nv-info", a).html("<a href=\"" + d.input + "\">" + d.mess + "</a>").removeClass("error").removeClass("success").addClass("info").show();
-            } else {
-                $("input,button", a).prop("disabled", !1);
-                $('.loginstep1, .loginstep2, .loginCaptcha', a).toggleClass('hidden');
-            }
-        }
-    }));
-    return !1
-}
-
 function reg_validForm(a) {
     $(".has-error", a).removeClass("has-error");
     var d = 0,

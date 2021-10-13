@@ -1,15 +1,27 @@
 <!DOCTYPE html>
+<?php
+if(isset($_SESSION['validate_data'])){
+    extract($_SESSION['validate_data']);
+    unset($_SESSION['validate_data']);
+}
+if(isset($_SESSION['success'])){
+    extract($_SESSION['success']);
+    unset($_SESSION['success']);
+}
+?>
 
-<html lang="vi" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#">
+
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
 
 
-<!-- Mirrored from bookinghotel.mynukeviet.com/vi/booking-hotel/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Oct 2021 14:38:50 GMT -->
+<!-- Mirrored from bookinghotel.mynukeviet.com/vi/contact/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Oct 2021 14:39:27 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8"/><!-- /Added by HTTrack -->
 <head>
+    <base href="<?= WEB_ROOT ?>">
     <title></title>
     <meta name="description"
-          content="Quản lý phòng - Quản lý phòng - http&#x3A;&#x002F;&#x002F;bookinghotel.mynukeviet.com&#x002F;vi&#x002F;booking-hotel&#x002F;"/>
+          content="Liên hệ - Liên hệ - http&#x3A;&#x002F;&#x002F;bookinghotel.mynukeviet.com&#x002F;vi&#x002F;contact&#x002F;"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta name="twitter:card" content="summary"/>
     <meta name="author" content="ATR Hotel"/>
@@ -19,10 +31,10 @@
     <meta name="msnbot" content="all,index,follow"/>
     <meta name="generator" content="NukeViet v4.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta property="og:title" content="Quản lý phòng"/>
+    <meta property="og:title" content="Liên hệ"/>
     <meta property="og:type" content="website"/>
     <meta property="og:description"
-          content="Quản lý phòng - Quản lý phòng - http&#x3A;&#x002F;&#x002F;bookinghotel.mynukeviet.com&#x002F;vi&#x002F;booking-hotel&#x002F;"/>
+          content="Liên hệ - Liên hệ - http&#x3A;&#x002F;&#x002F;bookinghotel.mynukeviet.com&#x002F;vi&#x002F;contact&#x002F;"/>
     <meta property="og:site_name" content="ATR Hotel"/>
     <meta property="og:url" content="index.html"/>
     <link rel="shortcut icon" href="./public/client/uploads/logo-xs.png">
@@ -45,12 +57,14 @@
     <link rel="StyleSheet" href="./public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
     <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style_15a50.css?t=13">
     <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/booking-hotel5a50.css?t=13">
+    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/contact5a50.css?t=13">
     <link rel="StyleSheet" href="./public/client/themes/hotel01/css/users5a50.css?t=13">
     <link rel="StyleSheet" href="./public/client/themes/default/css/popup5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/contact25a50.css?t=13">
-    <title>Tìm kiếm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title></title>
 
     <ion-content padding>
         <ion-refresher (ionRefresh)="doRefresh($event)">
@@ -102,8 +116,8 @@
                             <ul class="list-inline list-unstyled text-center">
                                 <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a
                                             href="index.html" itemprop="url"
-                                            title="Quản lý phòng"><span class="txt"
-                                                                        itemprop="title">Tìm kiếm</span></a></li>
+                                            title="Liên hệ"><span class="txt"
+                                                                  itemprop="title">Liên hệ</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -113,123 +127,178 @@
     </div>
     <div class="container container-bg">
         <div class="row">
+            <?php if(isset($status)):?>
+                <p style="padding: 7px 5px ; border-radius: 5px; ; background: #33c319; color: black"><?=$status?></p>
+            <?php endif;?>
             <div class="col-md-24" style="padding: 0">
-                <div class="main-area main-area-1col main-area-full">
-                    <div class="wapper-content-page">
-                        <section
-                                class="resize_style section latest-blog outer-bottom-vs wow animated animatedFadeInUp fadeInUp mg-style mg-bottom-10 newroom mg-pd-0 animated">
-                            <div style="margin-bottom: 5px;">
-                                <h2 class="section-title"><a class="pull-left" href="Tang-tret/index.html"
-                                                             title="Tầng trệt">Kết quả tìm kiếm</a>
-                                    <div class="clear"></div>
-                                </h2>
-                                <span class="pull-right">
-				</span>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="blog-slider-container">
-                                <div class="resize_style view scroll-tabs outer-top-vs wow fadeInUp mg-top-0 ">
-                                    <div class="tab-content">
-                                        <div class="search-result-container">
-                                            <div class="category-list">
-                                                <div id="grid-container">
-                                                    <div class="category-product">
-                                                        <div class="row">
-                                                            <?php foreach ($data as $key=>$item):?>
-                                                                <div class="col-md-8 col-sm-6 col-xs-24 resize_style wow fadeInUp animated	">
-                                                                    <div class="box_item">
-                                                                    <span class="thumbnail">
-                                                                        <div class="item">
-                                                                            <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Phòng 505"
-                                                                               class="effect-chico ecfix box_ribbon_vg">  <img
-                                                                                        src="<?=$item['image']?>"
-                                                                                        alt="Phòng 505">
-                                                                            </a>
-                                                                        </div>
-                                                                    </span>
-                                                                        <hr class="line">
-                                                                        <div class="items_info_room">
-                                                                            <h4 class="des_booking">
-                                                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html"
-                                                                                   title="Phòng 505"><?=$item['title']?></a>
-                                                                            </h4>
+                <div class="page">
 
-                                                                            <div class="items_status mg-bottom-10 mg-top-10">
-                                                                                <span> Còn phòng</span>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-16">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3>Thông tin đặt hàng</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <table id="example" class="display" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Mã</th>
+                                            <th>Tên Phòng</th>
+                                            <th>Ngày đến</th>
+                                            <th>Ngày đi</th>
+                                            <th>Số người</th>
+                                            <th>Trạng thái</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($orders as $key=>$item):?>
+                                                <tr style="font-size: 13px;">
+                                                    <td><?= $item['code'] ?></td>
+                                                    <td ><?= $item['title'] ?></td>
+                                                    <td><?= date("m-d-Y", strtotime( $item['start'] )) ?></td>
+                                                    <td><?= date("m-d-Y", strtotime( $item['end'] )) ?></td>
+                                                    <td style="text-align: center"><?= $item['count_people']?></td>
+                                                    <td style="text-align: center;">
+                                                        <?php if ($item['status'] == 0): ?>
+                                                            <span class="btn btn-flat"
+                                                                  style="padding: 5px 2px; background: #e08e0b; color: #fff; font-size:11px;">Đặt phòng</span>
+                                                        <?php elseif($item['status'] == 1): ?>
+                                                            <span class="btn btn-flat"
+                                                                  style="padding: 5px 2px; background: #00acd6;color: #fff; font-size:11px; ">Thành công</span>
+                                                        <?php elseif($item['status'] == 2): ?>
+                                                            <span class="btn  btn-flat"
+                                                                  style="padding: 5px 2px; background: #008d4c;color: #fff; font-size:11px; ">Đã thanh toán</span>
+                                                        <?php elseif($item['status'] == 3): ?>
+                                                            <span class="btn btn-flat"
+                                                                  style="padding: 5px 2px; background: #f4543c;color: #fff; font-size:11px; ">Nhân viên hủy</span>
+                                                        <?php else: ?>
+                                                            <span class="btn btn-flat"
+                                                                  style="padding: 5px 2px; background: #f4543c; color: #fff; font-size:11px;">Đã hủy</span>
+                                                        <?php endif; ?>
+                                                    </td>
+                                                    <td style="text-align: center;">
+                                                        <?php if(in_array($item['status'] , [0,1])): ?>
+                                                            <button class="btn btn-primary btn-cancel-order" style="font-size: 11px;padding: 5px 8px;  height: 35px;" data-id="<?= $item['id']?>">Hủy</button>
+                                                        <?php endif;?>
+                                                    </td>
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <th>Mã</th>
+                                            <th>Tên Phòng</th>
+                                            <th>Ngày đến</th>
+                                            <th>Ngày đi</th>
+                                            <th>Số người</th>
+                                            <th>Trạng thái</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="myModal" role="dialog">
+                                        <div class="modal-dialog">
 
-                                                                            </div>
-
-                                                                            <p class="des_booking"><?=$item['title']?></p>
-                                                                            <hr class="line">
-                                                                            <div class="row">
-                                                                                <div class="col-md-24 col-sm-24 price_area">
-                                                                                    <p class="price">
-                                                                                        <?=number_format($item['price'] , 0 , ',','.')?><sup>đ</sup>
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="col-md-24 col-sm-24 text-center ">
-                                                                                    <hr class="line">
-                                                                                    <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html#booking"
-                                                                                       class="btn btn-primary pull-left">ĐẶT
-                                                                                        PHÒNG</a>
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            <?php endforeach;?>
-
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Lý do hủy đơn : </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="" method="post" id="form-update-order">
+                                                        <div class="form-group">
+                                                            <div>
+                                                                <textarea class="form-control  input" placeholder="Lý do ...." name="content" rows="5" ></textarea>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" id="btn-update-order" class="btn btn-primary" style="height: 30px; padding: 4px 8px; font-size: 11px;"  >Gửi</button>
+                                                    <button type="button" class="btn btn-default" style="height: 30px; padding: 4px 8px; font-size: 11px;" data-dismiss="modal">Hủy</button>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">Thay đổi thông tin</div>
+                                <div class="panel-body loadContactForm">
+                                    <div class="lien-he">
+                                        <form method="post" action="./information/update" >
+                                            <?php if(isset($error)):?>
+                                                <div class="error">
+                                                    <ul style="margin-bottom: 10px;">
+                                                        <?php foreach($error as $val): ?>
+                                                            <li class="text-danger"> <?= $val ?> </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
 
-                    </div>
-                </div>
+                                            <?php endif;?>
 
-                <div id='fanback'>
-                    <div id='fan-exit'></div>
-                    <div id='MorganAndMen'>
-                        <div id='TheBlogWidgets'></div>
-                        <div class='remove-borda'></div>
-                        <div class="popup_content" style="width: 480px">
-                            <div style="text-align:center"><img alt="17979"
-                                                                src="./public/client/uploads/about/17979.jpg"
-                                                                style="width:100%"/></div>
+                                            <div class="form-group clearfix">
+                                                <p>Họ và tên:</p>
+                                                <div class="input-group">
+                                                    <input type="text" maxlength="100" value="<?= $_SESSION['user.login']['name']?>" name="name"
+                                                           class="form-control required" placeholder="Họ và tên" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <p>Email:</p>
+                                                <div class="input-group">
+                                                    <input type="email" maxlength="60" value="<?= $_SESSION['user.login']['email']?>" name="email"
+                                                           class="form-control required" placeholder="Email" />
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <p>Số điện thoại:</p>
+                                                <div class="input-group">
+                                                    <input type="text" maxlength="60" value="<?= $_SESSION['user.login']['phone']?>" name="phone"
+                                                           class="form-control" placeholder="Điện thoại"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group clearfix">
+                                                <p>Mật khẩu:</p>
+                                                <div class="input-group">
+                                                    <input type="password" maxlength="60" value="" name="password"
+                                                           class="form-control" placeholder="Mật Khẩu"/>
+                                                </div>
+                                            </div>
+                                            <div class="text-center form-group">
+
+                                                <button type="submit"  class="ok-ok"/>Cập nhật </button>
+                                            </div>
+                                        </form>
+                                        <div class="contact-result alert"></div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
+
         </div>
     </div>
+</div>
 </div>
 <footer id="footer" class="footer color-bg ">
     <div class="contact_formnot">
         <div class="container">
             <div class="row">
-                <div class="col-md-16 col-sm-24 offset-4">
-                    <div class="col-xs-24">
-                        <div class="main-title-area text-center ">
-                            <h2 class="title left-right-line m-b10 m-t10"><a href="#">Đăng kí đặt phòng hôm nay</a></h2>
-                        </div>
-                    </div>
-                    <div id="contactButton">
-                        <button type="button" class="ctb btn btn-primary btn-sm" data-module="contact"><em
-                                    class="fa fa-pencil-square-o"></em>Gửi phản hồi
-                        </button>
-                        <div class="clearfix">
-                            <div data-cs="5916bf0c77275228934097030791ecf6"></div>
-                        </div>
-                    </div>
-
-                </div>
+                <div class="col-md-16 col-sm-24 offset-4"></div>
             </div>
         </div>
     </div>
@@ -261,7 +330,7 @@
                             <li><a href="../about/index.html" title="Giới thiệu">Giới thiệu</a></li>
                             <li><a href="../news/index.html" title="Tin Tức">Tin Tức</a></li>
                             <li><a href="../hop-dap/index.html" title="Hỏi đáp">Hỏi đáp</a></li>
-                            <li><a href="../contact/index.html" title="Liên hệ">Liên hệ</a></li>
+                            <li><a href="index.html" title="Liên hệ">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -308,11 +377,11 @@
                                     <em class="fa fa-flag"></em>
                                 </div>
                                 <div class="media-body">
-								<span>Chịu trách nhiệm: <span
-                                            itemprop="founder" itemscope
-                                            itemtype="http://schema.org/Person"><span
-                                                itemprop="name">Hồ Ngọc Triển</span></span>
-								</span>
+													<span>Chịu trách nhiệm: <span
+                                                                itemprop="founder" itemscope
+                                                                itemtype="http://schema.org/Person"><span
+                                                                    itemprop="name">Hồ Ngọc Triển</span></span>
+													</span>
                                 </div>
                             </li>
                             <li class="media">
@@ -329,10 +398,10 @@
                                     <em class="fa fa-phone"></em>
                                 </div>
                                 <div class="media-body">
-								<span><span style="display:block">Điện thoại:+84-233.6270610&#91;+84233.6270610&#93;
-										<a class="margin-left-0" href="tel:+84905.908430">
-								</a>
-								</span>
+												<span><span style="display:block">Điện thoại:+84-233.6270610&#91;+84233.6270610&#93;
+													<a class="margin-left-0" href="tel:+84905.908430">
+													</a>
+												</span>
                                 </div>
                             </li>
                         </ul>
@@ -371,20 +440,20 @@
         <div class="col-xs-24 col-sm-24 col-md-24 contact_default">
 
             <div class="copyright">
-    <span>&copy;&nbsp;Bản quyền thuộc về
-    <a href="http://bookinghotel.mynukeviet.com/">
-    ATR Hotel
-    </a>
-    .&nbsp;
-    </span>
+						<span>&copy;&nbsp;Bản quyền thuộc về
+							<a href="http://bookinghotel.mynukeviet.com/">
+								ATR Hotel
+							</a>
+							.&nbsp;
+						</span>
                 <span>Mã nguồn <a href="http://nukeviet.vn/" target="_blank">NukeViet CMS</a>.&nbsp;
-    </span>
+						</span>
                 <span>Thiết kế bởi
-        <a href="http://tdfoss.vn/" target="_blank">
-            TDFOSS.,LTD
-    </a>
-    .&nbsp;
-    </span>
+							<a href="http://tdfoss.vn/" target="_blank">
+								TDFOSS.,LTD
+							</a>
+							.&nbsp;
+						</span>
             </div>
 
         </div>
@@ -401,7 +470,7 @@
     </div>
 </div>
 
-<div id="guestLogin_nv8" class="hidden">
+<div id="guestLogin_nv7" class="hidden">
     <div class="page panel panel-default bg-lavender box-shadow">
         <div class="panel-body">
             <h3 id="loginBarHandle" class="h3_login">
@@ -538,16 +607,15 @@
     </div>
 </div>
 <script src="./public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
-<script data-ad-client="ca-pub-6482774583325006" async
-        src="./public/client/../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+
 <script>var nv_base_siteurl = "http://bookinghotel.mynukeviet.com/", nv_lang_data = "vi", nv_lang_interface = "vi",
-        nv_name_variable = "nv", nv_fc_variable = "op", nv_lang_variable = "language", nv_module_name = "booking-hotel",
+        nv_name_variable = "nv", nv_fc_variable = "op", nv_lang_variable = "language", nv_module_name = "contact",
         nv_func_name = "main", nv_is_user = 0, nv_my_ofs = 7, nv_my_abbr = "+07", nv_cookie_prefix = "nv4",
         nv_check_pass_mstime = 1738000, nv_area_admin = 0, nv_safemode = 0, theme_responsive = 1,
         nv_is_recaptcha = 0;</script>
 <script src="./public/client/assets/js/language/vi5a50.js?t=13"></script>
 <script src="./public/client/assets/js/global5a50.js?t=13"></script>
-<script src="./public/client/themes/default/js/booking-hotel5a50.js?t=13"></script>
+<script src="./public/client/themes/hotel01/js/contact5a50.js?t=13"></script>
 <script src="./public/client/themes/hotel01/js/main5a50.js?t=13"></script>
 <script type="text/javascript" src="./public/client/themes/hotel01/js/users5a50.js?t=13"></script>
 <script type="text/javascript" data-show="after">
@@ -565,37 +633,36 @@
         }
     });
 </script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".btn-widget").click(function () {
-            var a = $(this).closest('.div_icon_wid').find('.box_icon_wid');
-            if (a.hasClass('hidden')) {
-                a.removeClass('hidden');
-            } else {
-                a.addClass('hidden');
-            }
-        });
-    });
-</script>
 <script type="text/javascript" src="./public/client/themes/default/js/popup5a50.js?t=13"></script>
-<script type='text/javascript'>
-    $(document).ready(function ($) {
-        var timer_close = '0';
-        var develop_mode = 0;
-        if ($.cookie('popup_site') != 'yes' || develop_mode) {
-            $('#fanback').delay('1000').fadeIn('medium');
-            $('#TheBlogWidgets, #fan-exit').click(function () {
-                $('#fanback').stop().fadeOut('medium');
-            });
-            $.cookie('popup_site', 'yes', {path: '/', expires: 7});
+
+<script type="text/javascript"
+        src="http://maps.google.com/maps/api/js?key=AIzaSyC8ODAzZ75hsAufVBSffnwvKfTOT6TnnNQ"></script>
+<script>
+    var ele = 'company-map-293';
+    var map, marker, ca, cf, a, f, z;
+    ca = parseFloat($('#' + ele).data('clat'));
+    cf = parseFloat($('#' + ele).data('clng'));
+    a = parseFloat($('#' + ele).data('lat'));
+    f = parseFloat($('#' + ele).data('lng'));
+    z = parseInt($('#' + ele).data('zoom'));
+    map = new google.maps.Map(document.getElementById(ele), {
+        zoom: z,
+        center: {
+            lat: ca,
+            lng: cf
         }
     });
+    marker = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(a, f),
+        draggable: false,
+        animation: google.maps.Animation.DROP
+    });
 </script>
-<script src="./public/client/themes/hotel01/js/contact25a50.js?t=13"></script>
-<script>
-    (function (d, s, id) {
+<!-- <script>
+    ( function(d, s, id) {
         var js,
-            fjs = d.getElementsByTagName(s)[0];
+        fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id))
             return;
         js = d.createElement(s);
@@ -603,7 +670,7 @@
         js.src = "./public/client/../connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1813595862224723";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
+</script> -->
 <script src="./public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
 <script src="./public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
 <script src="./public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
@@ -657,7 +724,31 @@
         src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script
         src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript">
+    $(document).on('click' , '.btn-cancel-order',function (){
+       var id = $(this).data('id');
 
+       $('#myModal').find('form').attr('action' ,'information/update-order-'+ id);
+       $('#myModal').modal();
+    });
+    $('#btn-update-order').click(function (){
+
+        $("#form-update-order").submit();
+    });
+
+    $(document).ready(function () {
+        // Setup - add a text input to each footer cell
+        // $('#example tfoot th').each( function () {
+        //     var title = $(this).text();
+        //     $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+        // } );
+
+        // DataTable
+        var table = $('#example').DataTable({});
+
+    });
+</script>
 </body>
 <!-- SiteModal Required!!! -->
 <div id="sitemodal" class="modal fade" role="dialog">
@@ -673,10 +764,10 @@
     </div>
 </div>
 <div class="location_seo" style="display:none !important">
-<span class='h-adr'>
-<span class='p-street-address'>188/9 Thành Thái </span>,
-<span class='p-locality'> P.12, Q.10</span>, <span class='p-country-name'>TP.HCM</span>
-- Code: <span class='p-postal-code'>700000</span></span></li>
+			<span class='h-adr'>
+				<span class='p-street-address'>188/9 Thành Thái </span>,
+				<span class='p-locality'> P.12, Q.10</span>, <span class='p-country-name'>TP.HCM</span>
+				- Code: <span class='p-postal-code'>700000</span></span></li>
     <p class='h-geo geo'>
         Tọa Độ:
         <span class='p-latitude latitude'>10.770284</span>,
@@ -692,5 +783,5 @@
 <div id="openidBt" data-result="" data-redirect=""></div>
 </body>
 
-<!-- Mirrored from bookinghotel.mynukeviet.com/vi/booking-hotel/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Oct 2021 14:39:02 GMT -->
+<!-- Mirrored from bookinghotel.mynukeviet.com/vi/contact/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Oct 2021 14:39:28 GMT -->
 </html>

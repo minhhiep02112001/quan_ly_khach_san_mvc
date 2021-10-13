@@ -47,6 +47,7 @@ class Order extends  Model
     public function  getListOrderDetail($order_id){
         $sql = "SELECT  room.title ,  room.slug ,  room.price as 'room_price' ,  room.image , order_detail.price ,  order_detail.count_people as 'order_people' FROM order_detail JOIN room ON order_detail.room_id = room.id WHERE  order_id = $order_id";
         $query = $this->_db->query($sql);
+
         if (empty($query)) {
             return false;
         }

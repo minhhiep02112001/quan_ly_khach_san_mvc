@@ -7,6 +7,18 @@ $route = [
     'room/.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailRoom'],
     'article/.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailArticle'],
     'search' => ['method' => 'GET', 'use' => 'ClientController@search'],
+    'login' => ['method' => 'GET', 'use' => 'AuthClientController@login'],
+    'login/post' => ['method' => 'GET', 'use' => 'AuthClientController@postLogin'],
+    'register' => ['method' => 'GET', 'use' => 'AuthClientController@register'],
+    'register/post' => ['method' => 'GET', 'use' => 'AuthClientController@postRegister'],
+    'logout' => ['method' => 'GET', 'use' => 'AuthClientController@logout'],
+    'information' => ['method' => 'GET', 'use' => 'AuthClientController@information'],
+    'information/update-order-(\d+)' => ['method' => 'GET', 'use' => 'ClientController@updateStatusOrder'],
+    'information/update' => ['method' => 'GET', 'use' => 'AuthClientController@updateInformation'],
+
+    // Client booked room :
+    'booked/room' => ['method' => 'POST', 'use' => 'CartController@orderRoom'],
+
 
     // Admin Login
     'admin/login'=>['method' => 'GET', 'use' => 'admin/AuthController@login'],

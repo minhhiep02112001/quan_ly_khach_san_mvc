@@ -98,8 +98,8 @@ if (isset($_SESSION['success'])) {
                                     <td><?= $item['email'] ?></td>
                                     <td><?= $item['phone'] ?></td>
                                     <td class="text-center"><?= number_format($item['total'] , 0 ,',' ,'.')?> đ</td>
-                                    <td class="text-center"><?= date("m-d-Y", strtotime( $item['start'] )) ?></td>
-                                    <td class="text-center"><?= date("m-d-Y", strtotime( $item['end'] )) ?></td>
+                                    <td class="text-center"><?= date("d-m-Y", strtotime( $item['start'] )) ?></td>
+                                    <td class="text-center"><?= date("d-m-Y", strtotime( $item['end'] )) ?></td>
                                     <td class="text-center">
                                         <a href="./admin/order/show/<?= $item['id'] ?>" class="btn btn-info">chi
                                             tiết</a>
