@@ -102,7 +102,7 @@ class Request
                     }
 
                     if ($ruleName == 'required'){
-                        if(empty($dataFields[$fieldName])){
+                        if(empty(trim($dataFields[$fieldName]))){
                             $checkValidate = false;
                             $this->setError($fieldName , $ruleName);
                         }

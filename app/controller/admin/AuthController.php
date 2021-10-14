@@ -166,7 +166,7 @@ class AuthController extends Controller
         $_SESSION['admin.login'] = $this->_db->table("customer")->select('id,name,email,phone,image')
             ->where('id', '=', $_SESSION['admin.login']['id'])->find();
 
-        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:/admin/information");
         exit();
     }

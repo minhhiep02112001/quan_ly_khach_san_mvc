@@ -24,7 +24,7 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                            <img src="<?=$_SESSION['admin.login']['image']?>" class="img-circle" alt="User Image" />
+                            <img src="<?=$_SESSION['admin.login']['image'] ?? './public/admin/img/images.png'?>" class="img-circle" alt="User Image" />
                             <p>
                                 Nhân Viên
                             </p>

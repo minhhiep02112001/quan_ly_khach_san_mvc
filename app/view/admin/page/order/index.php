@@ -79,19 +79,19 @@ if (isset($_SESSION['success'])) {
                                     <td class="text-center">
                                         <?php if ($item['status'] == 0): ?>
                                         <span class="btn btn-flat"
-                                              style="padding: 5px 10px; background: #e08e0b; color: #fff">Đặt phòng</span>
+                                              style="padding: 5px 10px; background: #e08e0b; color: #fff"><?= getOrderStatus($item['status'])?></span>
                                         <?php elseif($item['status'] == 1): ?>
                                         <span class=" btn-flat"
-                                              style="padding: 5px 10px; background: #00acd6;color: #fff; ">Thành công</span>
+                                              style="padding: 5px 10px; background: #00acd6;color: #fff; "><?= getOrderStatus($item['status'])?></span>
                                         <?php elseif($item['status'] == 2): ?>
                                         <span class="btn  btn-flat"
-                                              style="padding: 5px 10px; background: #008d4c;color: #fff; ">Đã thanh toán</span>
+                                              style="padding: 5px 10px; background: #008d4c;color: #fff; "><?= getOrderStatus($item['status'])?></span>
                                         <?php elseif($item['status'] == 3): ?>
                                         <span class="btn btn-flat"
-                                              style="padding: 5px 10px; background: #f4543c;color: #fff; ">Nhân viên hủy</span>
+                                              style="padding: 5px 10px; background: #f4543c;color: #fff; "><?= getOrderStatus($item['status'])?></span>
                                         <?php else: ?>
                                         <span class="btn btn-flat"
-                                              style="padding: 5px 10px; background: #f4543c; color: #fff;">Khách hàng hủy</span>
+                                              style="padding: 5px 10px; background: #f4543c; color: #fff;"><?= getOrderStatus($item['status'])?></span>
                                         <?php endif; ?>
                                     </td>
                                     <td><?= $item['name'] ?></td>

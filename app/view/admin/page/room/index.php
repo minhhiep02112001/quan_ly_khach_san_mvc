@@ -70,7 +70,7 @@ if (isset($_SESSION['success'])) {
                                     <td><?= ++$start ?></td>
                                     <td>
                                         <div class="image" style="margin:0 auto;width: 70px ; height: 50px; overflow:hidden; border: 1px solid ; border-radius: 5px;">
-                                            <img style="width: 100%; height: 100%;" src="<?= $item['image'] ?? ''?>">
+                                            <img style="width: 100%; height: 100%;" src="<?= $item['image'] ?? './public/admin/img/images.png'?>">
                                         </div>
                                     </td>
                                     <td><?= $item['title']?></td>

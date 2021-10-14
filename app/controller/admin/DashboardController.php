@@ -42,6 +42,7 @@ class DashboardController extends Controller
         $date = date('d/m/Y');
         $start_day = $_POST['start_day']??$date ;
         $end_day = $_POST['end_day']??$date;
+
         $sql = "SELECT orders.status , COUNT(orders.total) AS 'sum_records' , SUM(orders.total) AS 'sum_price' 
         FROM orders WHERE orders.created_at BETWEEN '$start_day' AND '$end_day' 
         GROUP BY orders.status ORDER  BY orders.status ASC";

@@ -9,6 +9,11 @@ function arrayGet($arr, $key, $default = '')
     return $arr[$key];
 }
 
+function getOrderStatus($id){
+    global $config;
+    return $config['status'][$id];
+}
+
 function uploadImage($file, $target_dir = "")
 {
     // check file exists folder

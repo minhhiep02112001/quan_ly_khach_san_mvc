@@ -1,3 +1,9 @@
+<?php
+if(isset($_SESSION['validate_data'])){
+    extract($_SESSION['validate_data']);
+    unset($_SESSION['validate_data']);
+}
+?>
 <!DOCTYPE html>
 
 <html lang="vi">
@@ -242,14 +248,26 @@
                                     <div id="booking" class="tab-pane in">
                                         <div class="product-tab">
                                             <div class="frm-booking">
-                                                <form class="form-horizontal" id="frm-booking">
-                                                    <input type="hidden" name="id" value="20"/>
+
+                                                <?php if(isset($error)):?>
+                                                    <div class="error">
+                                                        <ul style="margin-left: 65px;margin-bottom: 10px; list-style: disc">
+                                                            <?php foreach($error as $val): ?>
+                                                                <li class="text-danger"> <?= $val ?> </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                        <hr style="margin-top: 15px; margin-bottom: 25px;">
+                                                    </div>
+                                                <?php endif;?>
+                                                <form class="form-horizontal" action="./booked/room" method="post" id="frm-booking">
+                                                    <input type="hidden" name="room_id" value="<?= $room['id']?>"/>
+                                                    <input type="hidden" name="price" value="<?= $room['price']?>"/>
 
                                                     <div class="form-group">
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Họ
                                                             tên <span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
-                                                            <input type="text" name="name" value="<?= $_SESSION['user.login']['name'] ?? '' ?>" class="form-control"
+                                                            <input type="text" name="name" value="<?= $old['name'] ?? $_SESSION['user.login']['name'] ?? '' ?>" class="form-control"
                                                                    id="fullname" placeholder="">
                                                         </div>
                                                     </div>
@@ -257,7 +275,7 @@
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Email
                                                             <span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
-                                                            <input type="email" name="email" class="form-control" value="<?= $_SESSION['user.login']['email'] ?? '' ?>"
+                                                            <input type="email" name="email" class="form-control" value="<?= $old['email'] ?? $_SESSION['user.login']['email'] ?? '' ?>"
                                                                    id="email" placeholder="">
                                                         </div>
                                                     </div>
@@ -266,7 +284,7 @@
                                                             điện thoại <span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
                                                             <input type="text" name="phone" class="form-control"
-                                                                   id="phone" value="<?= $_SESSION['user.login']['phone'] ?? '' ?>" placeholder="">
+                                                                   id="phone" value="<?= $old['phone'] ?? $_SESSION['user.login']['phone'] ?? '' ?>" placeholder="">
                                                         </div>
                                                     </div>
 
@@ -276,7 +294,7 @@
                                                         <div class="col-xs-24 col-sm-20">
                                                             <div class="input-group">
                                                                 <input class="form-control datepicker_booking"
-                                                                       type="text" value="04/10/2021" name="start_day" id="start_day"
+                                                                       type="text" value="<?= $old['start-day'] ??'' ?>" name="start_day" id="start_day"
                                                                        readonly="readonly" placeholder=""/> <span
                                                                         class="input-group-btn">
 																							<button class="btn btn-default"
@@ -293,7 +311,7 @@
                                                         <div class="col-xs-24 col-sm-20">
                                                             <div class="input-group">
                                                                 <input class="form-control datepicker_booking"
-                                                                       type="text" value="05/10/2021" name="end_day" id="end_day"
+                                                                       type="text" value="<?= $old['end_day'] ??'' ?>" name="end_day" id="end_day"
                                                                        readonly="readonly" placeholder=""/> <span
                                                                         class="input-group-btn">
 																							<button class="btn btn-default"
@@ -308,7 +326,7 @@
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Số
                                                             người<span class="red">(*)</span></label>
                                                         <div class="col-xs-24 col-sm-20">
-                                                            <input type="number" name="num_booking" value="1"
+                                                            <input type="number" name="count_people" value="<?= $old['count_people'] ??'1' ?>" min="1"
                                                                    class="form-control" id="num_booking" placeholder="">
                                                         </div>
                                                     </div>
@@ -316,18 +334,19 @@
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label">Ghi
                                                             chú</label>
                                                         <div class="col-xs-24 col-sm-20">
-                                                            <textarea name="note" class="form-control"></textarea>
+                                                            <textarea name="contents" class="form-control"><?= $old['contents'] ??'' ?></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="col-xs-24 col-sm-20 text-center">
-                                                            <input type="hidden" name="submit" value="1"/>
+
                                                             <button type="submit" class="btn btn-primary">Gửi thông
                                                                 tin
                                                             </button>
                                                         </div>
                                                         <label class="col-xs-24 col-sm-4  text-xs-leftcontrol-label"></label>
                                                     </div>
+
                                                 </form>
                                             </div>
                                         </div>
@@ -792,7 +811,7 @@
     var array = ["2018-12-21", "2018-12-22", "2018-12-23", "2018-12-24", "2018-12-25", "2018-12-26", "2018-12-27", "2018-12-28", "2018-12-29", "2019-02-27", "2019-02-28", "2019-03-01", "2019-03-02", "2019-03-19", "2019-03-20", "2019-03-21", "2019-03-22", "2019-03-23", "2019-03-28", "2019-03-29", "2019-03-30", "2019-03-31", "2019-07-10", "2019-07-11", "2019-07-12"];
 
     $(".datepicker_booking").datepicker({
-        dateFormat: "dd/mm/yy",
+        dateFormat: "dd-mm-yy",
         minDate: 0,
         changeMonth: !0,
         changeYear: !0,
@@ -945,6 +964,15 @@
         }
 
         return true;
+    });
+    $(document).ready(function () {
+        var date = new Date();
+        if($('#start_day').val() == ""){
+            $("#start_day").val(date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear())
+        }
+        if($('#end_day').val() == ""){
+            $("#end_day").val(date.getDate()+"-"+(date.getMonth()+1)+"-"+date.getFullYear())
+        }
     });
 
 </script>

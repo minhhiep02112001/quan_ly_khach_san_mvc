@@ -157,25 +157,25 @@ if(isset($_SESSION['success'])){
                                                 <tr style="font-size: 13px;">
                                                     <td><?= $item['code'] ?></td>
                                                     <td ><?= $item['title'] ?></td>
-                                                    <td><?= date("m-d-Y", strtotime( $item['start'] )) ?></td>
-                                                    <td><?= date("m-d-Y", strtotime( $item['end'] )) ?></td>
+                                                    <td><?= date("d-m-Y", strtotime( $item['start'] )) ?></td>
+                                                    <td><?= date("d-m-Y", strtotime( $item['end'] )) ?></td>
                                                     <td style="text-align: center"><?= $item['count_people']?></td>
                                                     <td style="text-align: center;">
                                                         <?php if ($item['status'] == 0): ?>
                                                             <span class="btn btn-flat"
-                                                                  style="padding: 5px 2px; background: #e08e0b; color: #fff; font-size:11px;">Đặt phòng</span>
+                                                                  style="padding: 5px 2px; background: #e08e0b; color: #fff; font-size:11px;"><?= getOrderStatus($item['status'])?></span>
                                                         <?php elseif($item['status'] == 1): ?>
                                                             <span class="btn btn-flat"
-                                                                  style="padding: 5px 2px; background: #00acd6;color: #fff; font-size:11px; ">Thành công</span>
+                                                                  style="padding: 5px 2px; background: #00acd6;color: #fff; font-size:11px; "><?= getOrderStatus($item['status'])?></span>
                                                         <?php elseif($item['status'] == 2): ?>
                                                             <span class="btn  btn-flat"
-                                                                  style="padding: 5px 2px; background: #008d4c;color: #fff; font-size:11px; ">Đã thanh toán</span>
+                                                                  style="padding: 5px 2px; background: #008d4c;color: #fff; font-size:11px; "><?= getOrderStatus($item['status'])?></span>
                                                         <?php elseif($item['status'] == 3): ?>
                                                             <span class="btn btn-flat"
-                                                                  style="padding: 5px 2px; background: #f4543c;color: #fff; font-size:11px; ">Nhân viên hủy</span>
+                                                                  style="padding: 5px 2px; background: #f4543c;color: #fff; font-size:11px; "><?= getOrderStatus($item['status'])?></span>
                                                         <?php else: ?>
                                                             <span class="btn btn-flat"
-                                                                  style="padding: 5px 2px; background: #f4543c; color: #fff; font-size:11px;">Đã hủy</span>
+                                                                  style="padding: 5px 2px; background: #f4543c; color: #fff; font-size:11px;"><?= getOrderStatus($item['status'])?></span>
                                                         <?php endif; ?>
                                                     </td>
                                                     <td style="text-align: center;">

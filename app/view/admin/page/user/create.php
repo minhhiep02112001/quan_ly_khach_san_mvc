@@ -60,7 +60,7 @@
                             <label for="exampleInputFile">Image</label>
                             <input type="file" name="image" id="file-image-upload">
                             <div class="content-image-upload" style="overflow:hidden ;width: 70px ; height: 70px;border-radius: 5px ; border: 1px solid; margin-top: 10px;">
-                                <img id="image-upload" src="" width="100%" height="100%"  alt="">
+                                <img id="image-upload" src="./public/admin/img/images.png" width="100%" height="100%"  alt="">
                             </div>
                         </div>
                         <div>

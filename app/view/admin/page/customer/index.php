@@ -69,7 +69,7 @@ if (isset($_SESSION['success'])) {
                                     <td>
                                         <div class="image"
                                              style="width: 50px; margin: 0 auto ; height: 50px ;border-radius: 5px; overflow: hidden; border: 1px solid">
-                                            <img src="<?= $key['image'] ?>" style="width: 100%;height: 100%;" alt="">
+                                            <img src="<?= $key['image'] ?? './public/admin/img/images.png' ?>" style="width: 100%;height: 100%;" alt="">
                                         </div>
                                     </td>
                                     <td><?= $key['name'] ?></td>

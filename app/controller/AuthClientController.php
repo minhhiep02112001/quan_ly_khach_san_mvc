@@ -172,9 +172,9 @@ class AuthClientController extends Controller
 
         $request->rule([
             'name' => 'required',
-            'email' => 'required|email|unique:user,email,'.$_SESSION['user.login']['id'] ,
+            'email' => 'required|email|unique:user,email,' . $_SESSION['user.login']['id'],
             'password' => 'nullable|min:6',
-            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:user,phone,'.$_SESSION['user.login']['id']   ,
+            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:user,phone,' . $_SESSION['user.login']['id'],
         ]);
 
         $request->message([

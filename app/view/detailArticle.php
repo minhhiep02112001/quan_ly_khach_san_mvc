@@ -129,7 +129,7 @@
                         <h1 class="title margin-bottom-lg"><?= $article['title']?></h1>
                         <div class="row margin-bottom-lg">
                             <div class="col-md-12">
-                                <span class="h5">Thứ năm - 22/11/2018 14:38</span>
+                                <span class="h5"><?= date("d-m-Y H:i:s", strtotime( $article['created_at'] ))?></span>
                             </div>
                             <div class="col-md-12">
 

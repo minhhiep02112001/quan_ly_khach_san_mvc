@@ -18,6 +18,9 @@ class OrderDetail extends Model
     {
         return [];
     }
+    function create($data){
+        return $this->table($this->setTable())->insertLastID($data);
+    }
 
     function getAllFindOrder($order_id){
         return $this->table($this->setTable())->where('order_id', '=', $order_id)->all();
