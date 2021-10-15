@@ -27,12 +27,17 @@ class ClientController extends Controller
 
     public function detailRoom($id)
     {
-        $room = $this->_db->table('room')->where('id', '=', $id)->find();
+        $room = $this->_db->table('room')->where('id', '=', $id)->where('active', '=', 1)->find();
+
+        if(!$room){
+            return loadError();
+        }
+
         $nextThirtyDay = date('Y-m-d', strtotime('+30 days'));
 
         $sql = "SELECT  orders.`start` , orders.`end`    
                 FROM orders RIGHT JOIN order_detail ON orders.ID = order_detail.order_id 
-                WHERE order_detail.room_id = $id  AND ( CURDATE() <= orders.`end` AND orders.`end` <= '$nextThirtyDay' )";
+                WHERE order_detail.room_id = $id  AND ( CURDATE() <= orders.`end` AND orders.`end` <= '$nextThirtyDay' ) AND orders.`status` IN (0,1,2)";
 
         $bookedDate = $this->_db->table('orders')->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -44,7 +49,12 @@ class ClientController extends Controller
 
     public function detailArticle($id)
     {
-        $article = $this->_db->table('article')->where('id', '=', $id)->find();
+        $article = $this->_db->table('article')->where('id', '=', $id)->where('active', '=', 1)->find();
+
+        if(!$article){
+            return loadError();
+        }
+
         $this->_db->table('article')->query("UPDATE `article` SET `view` = ".++$article['view']." where id = $id")->execute();
         $this->render("detailArticle", [
             'article' => $article
@@ -53,6 +63,10 @@ class ClientController extends Controller
 
     public function search()
     {
+        if (!isset($_GET['start']) || !isset($_GET['end'])){
+            header("Location:/");
+            exit();
+        }
         try {
             $start = \DateTime::createFromFormat('d/m/Y', $_GET['start'])->format('Y-m-d');
             $end = \DateTime::createFromFormat('d/m/Y', $_GET['end'])->format('Y-m-d');
@@ -62,7 +76,7 @@ class ClientController extends Controller
         }
         $sql = "SELECT * FROM room WHERE id not in (
             SELECT room_id from order_detail WHERE order_id in 
-            (SELECT id from orders WHERE (start <= '$start' and end >= '$start') or (start <= '$end' and end >= '$end')));";
+            (SELECT id from orders WHERE ((start <= '$start' and end >= '$start') or (start <= '$end' and end >= '$end')) AND orders.status IN (0,1,2)));";
 
         $data = $this->_db->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
 

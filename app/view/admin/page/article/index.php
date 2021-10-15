@@ -92,8 +92,8 @@ if (isset($_SESSION['success'])) {
                                     <td>
                                         <a href="./admin/article/edit/<?= $key['id'] ?>"
                                            class="btn btn-xs btn-warning">Sửa</a>
-                                        <a href="./admin/article/delete/<?= $key['id'] ?>"
-                                           class="btn btn-xs btn-danger btn-delete">Xóa</a>
+                                        <button type="button" data-id="<?= $key['id'] ?>" data-model="article"
+                                                class="btn btn-xs btn-danger btn-delete-record">Xóa</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

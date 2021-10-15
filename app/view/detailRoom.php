@@ -225,20 +225,11 @@ if(isset($_SESSION['validate_data'])){
                                             <div class="panel panel-default">
                                                 <div class="panel-body">
                                                     <div class="row form-review">
-                                                        <div class="col-xs-24 col-sm-11 col-md-11 border border-right">
-                                                            <div class="alert alert-info">
-                                                                <p class="text-center">
-                                                                    <a href="#">Để đánh giá phòng bạn vui lòng <b>Đăng
-                                                                            nhập</b>. </a>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-24 col-sm-13 col-md-13 border">
-                                                            <div id="rate_list">
-                                                                <p class="text-center">
-                                                                    <em class="fa fa-spinner fa-spin fa-3x">&nbsp;</em>
-                                                                </p>
-                                                            </div>
+                                                        <div class="col-xs-24 col-sm-24 col-md-24 border border-right">
+                                                            <div id="fb-root"></div>
+                                                            <div class="fb-comments"
+                                                                 data-href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>"
+                                                                 data-width="100%" data-numposts="5"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -977,11 +968,9 @@ if(isset($_SESSION['validate_data'])){
 
 </script>
 
-<script
-        src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
-<script
-        src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
-
+<script src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
+<script src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=1393238477712926&autoLogAppEvents=1" nonce="1aWzcUMT"></script>
 </body>
 <!-- SiteModal Required!!! -->
 <div id="sitemodal" class="modal fade" role="dialog">

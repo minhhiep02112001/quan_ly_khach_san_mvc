@@ -24,6 +24,7 @@ class AuthController extends Controller
             header("Location:/admin");
             exit();
         }
+
         $this->render('admin/page/auth/login');
     }
 
@@ -56,7 +57,7 @@ class AuthController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $user = $this->_db->table("customer")->select('id,name,email,phone,image')->where('email', '=', arrayGet($_POST, 'email', ''))
+        $user = $this->_db->table("customer")->select('id,name,email,phone,image,active')->where('email', '=', arrayGet($_POST, 'email', ''))
             ->where('password', '=', md5(arrayGet($_POST, 'password', '')))->find();
         if (!$user) {
             foreach ($request->errors() as $key) {
@@ -64,6 +65,13 @@ class AuthController extends Controller
             }
             $errors['old'] = $request->getParams();
             $errors['error'] = ["Thông tin tài khoản mật khẩu không chính xác !!!"];
+            $_SESSION['validate_data'] = $errors;
+            header("Location:{$_SERVER["HTTP_REFERER"]}");
+            exit();
+        }
+
+        if(!$user['active']){
+            $errors['error'] = ["Tài khoản của bạn đã bị khóa !!!"];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
@@ -138,7 +146,6 @@ class AuthController extends Controller
             'name' => arrayGet($_POST, 'name'),
             'email' => arrayGet($_POST, 'email'),
             'phone' => arrayGet($_POST, 'phone'),
-            'active' => arrayGet($_POST, 'active', 0),
         ];
 
         if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {

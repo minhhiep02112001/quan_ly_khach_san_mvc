@@ -67,12 +67,7 @@ if(isset($_SESSION['validate_data'])){
                                 </textarea>
 
                         </div>
-                        <div>
-                            <label>
-                                <input type="checkbox" name="status"
-                                       value="1" <?= $room['status'] ? 'checked' : '' ?> <?= isset($old['status']) ? 'checked' : '' ?>> Đã đặt
-                            </label>
-                        </div>
+
                         <div>
                             <label>
                                 <input type="checkbox" name="active"

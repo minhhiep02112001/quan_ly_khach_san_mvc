@@ -12,6 +12,7 @@ use PDO;
 class AuthClientController extends Controller
 {
     private $_db;
+
     public function __construct()
     {
         $this->_db = new Database();
@@ -51,7 +52,7 @@ class AuthClientController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $user = $this->_db->table("user")->select('id,name,email,phone,image')->where('email', '=', arrayGet($_POST, 'email', ''))
+        $user = $this->_db->table("user")->select('id,name,email,phone,image,active')->where('email', '=', arrayGet($_POST, 'email', ''))
             ->where('password', '=', md5(arrayGet($_POST, 'password', '')))->find();
         if (!$user) {
             foreach ($request->errors() as $key) {
@@ -63,7 +64,12 @@ class AuthClientController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-
+        if(!$user['active']){
+            $errors['error'] = ["Tài khoản của bạn đã bị khóa !!!"];
+            $_SESSION['validate_data'] = $errors;
+            header("Location:{$_SERVER["HTTP_REFERER"]}");
+            exit();
+        }
         $_SESSION['user.login'] = $user;
         header("Location:/");
         exit();
@@ -82,7 +88,7 @@ class AuthClientController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:user,email',
             'password' => 'required|min:6',
-            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:user,phone'  ,
+            'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:user,phone',
         ]);
 
         $request->message([
@@ -120,7 +126,7 @@ class AuthClientController extends Controller
 
         $customer = $this->model("User");
 
-        $record = $customer->create( $data);
+        $record = $customer->create($data);
         if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -132,22 +138,23 @@ class AuthClientController extends Controller
             exit();
         }
 
-        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:{$_SERVER["HTTP_REFERER"]}");
         exit();
     }
 
     public function logout()
     {
-        if(isset($_SESSION['user.login'])){
+        if (isset($_SESSION['user.login'])) {
             unset($_SESSION['user.login']);
         }
         header("Location:/");
         exit();
     }
 
-    public  function information(){
-        if(!isset($_SESSION['user.login'])){
+    public function information()
+    {
+        if (!isset($_SESSION['user.login'])) {
             header("Location:/login");
         }
         $sql = "SELECT orders.`code` , orders.`id` , orders.`status` , orders.total , orders.`start` , orders.`end` , orders.contents , 
@@ -155,17 +162,18 @@ class AuthClientController extends Controller
                 RIGHT  JOIN order_detail  ON orders.ID = order_detail.order_id
                 RIGHT  JOIN room  ON order_detail.room_id = room.id
                 RIGHT  JOIN `user`  ON `user`.id = orders.user_id
-                WHERE orders.user_id = {$_SESSION['user.login']['id']} ;";
+                WHERE orders.user_id = {$_SESSION['user.login']['id']} Order BY orders.id desc ;";
 
         $listOrder = $this->_db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
-        $this->render('information',[
-            'orders'=>$listOrder
+        $this->render('information', [
+            'orders' => $listOrder
         ]);
     }
 
-    public function updateInformation(){
-        if(!isset($_SESSION['user.login'])){
+    public function updateInformation()
+    {
+        if (!isset($_SESSION['user.login'])) {
             header("Location:/login");
         }
         $request = new Request();
@@ -207,12 +215,12 @@ class AuthClientController extends Controller
             'email' => arrayGet($_POST, 'email'),
             'phone' => arrayGet($_POST, 'phone'),
         ];
-        if(!empty($_POST['password'])){
+        if (!empty($_POST['password'])) {
             $data['password'] = md5($_POST['password']);
         }
         $user = $this->model("User");
 
-        $record = $user->updateRecord('id' , $_SESSION['user.login']['id'] , $data);
+        $record = $user->updateRecord('id', $_SESSION['user.login']['id'], $data);
         if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -225,7 +233,7 @@ class AuthClientController extends Controller
         }
         $_SESSION['user.login'] = $this->_db->table("user")->select('id,name,email,phone,image')
             ->where('id', '=', $_SESSION['user.login']['id'])->find();
-        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:{$_SERVER["HTTP_REFERER"]}");
         exit();
     }

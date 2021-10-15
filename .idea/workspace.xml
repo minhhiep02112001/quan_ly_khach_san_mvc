@@ -13,36 +13,57 @@
       <change afterPath="$PROJECT_DIR$/../laravel-8x/resources/views/web/layouts/app.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../laravel-8x/resources/views/welcome.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../quan_ly_khach_san/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controller/PaymentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/Payment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/vnpay_create_payment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/vnpay_ipn.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/vnpay_query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/vnpay_refund.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/vnpay_php/vnpay_return.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/article/d1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/article/d3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/room/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/room/8_26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vnpay_php/assets/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vnpay_php/assets/jquery-1.11.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/vnpay_php/assets/jumbotron-narrow.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../laravel_5.6" beforeDir="false" afterPath="$PROJECT_DIR$/../laravel_5.6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/AuthClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AuthClientController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/admin/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/OrderDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/OrderDetail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/layout/__header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/layout/__header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/layout/__sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/layout/__sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/admin/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/admin/RoomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/RoomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/Room.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/Room.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/article/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/article/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/page/article/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/article/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/article/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/article/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/page/customer/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/customer/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/page/customer/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/customer/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/customer/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/customer/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/order/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/order/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/order/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/order/show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/page/room/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/room/create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/room/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/room/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/room/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/room/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/page/user/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/user/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/admin/page/user/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/user/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/admin/page/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/admin/page/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/detailArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/detailArticle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/detailRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/detailRoom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/home.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/information.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/information.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Request.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ckfinder/core/connector/php/vendor/guzzlehttp/psr7/src/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/ckfinder/core/connector/php/vendor/guzzlehttp/psr7/src/Response.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ckfinder/core/connector/php/vendor/symfony/http-foundation/Response.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/ckfinder/core/connector/php/vendor/symfony/http-foundation/Response.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tintuc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../webtintuc/.editorconfig" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../webtintuc/.env.example" beforeDir="false" />
@@ -883,19 +904,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/admin/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\public\admin\img" />
+      <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\app\view" />
       <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc" />
+      <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\public\admin\img" />
       <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\public" />
       <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\public\client" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\public\vnpay_php" />
+      <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\app\view" />
       <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\app\view\admin" />
       <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\app\view\admin\layout" />
       <recent name="C:\xampp\htdocs\quan_ly_khach_san_mvc\app\view\admin\page\auth" />
@@ -950,7 +974,10 @@
       <workItem from="1634045322137" duration="11813000" />
       <workItem from="1634088122304" duration="12872000" />
       <workItem from="1634129374035" duration="9107000" />
-      <workItem from="1634174593653" duration="10556000" />
+      <workItem from="1634174593653" duration="12444000" />
+      <workItem from="1634202336925" duration="594000" />
+      <workItem from="1634213711751" duration="15006000" />
+      <workItem from="1634261455998" duration="10644000" />
     </task>
     <servers />
   </component>
@@ -968,5 +995,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/view/information.php</url>
+          <line>237</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

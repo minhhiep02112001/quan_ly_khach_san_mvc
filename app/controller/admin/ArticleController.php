@@ -230,11 +230,11 @@ class ArticleController extends Controller
 
         if ($this->_db->deleteRecord('id', $id)) {
             $_SESSION['success'] = [ 'status' => 'Success !!!' ];
-            header("Location:/admin/user");
+            header("Location:/admin/article");
             exit();
         } else {
             $_SESSION['success'] = [ 'error' => 'Error !!!' ];
-            header("Location:/admin/user");
+            header("Location:/admin/article");
             exit();
         }
     }

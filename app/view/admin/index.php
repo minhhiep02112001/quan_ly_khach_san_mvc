@@ -98,16 +98,26 @@
             }
 
         })
-
-        $('.btn-delete').click(function (event) {
-
-            if(!confirm("Bạn có muốn xóa không !!!")){
-                event.preventDefault();
-                return false
-            }
-
-        })
     })
+
+    $(document).on('click' , '.btn-delete-record' , function (event) {
+        var id = $(this).data('id');
+        var model = $(this).data('model');
+        if(confirm("Bạn có muốn xóa không !!!")){
+            location.href = '/admin/'+model+"/delete/"+id;
+        }
+
+    });
+
+    $(document).on('click' , '.logout' , function (event) {
+
+        if(!confirm("Bạn có muốn đăng xuất không !!!")){
+            event.preventDefault();
+            return false;
+        }
+
+    });
+
     $(document).on('change' , '#file-image-upload' , function () {
         var _lastimg = $(this);
         if (_lastimg != '') {

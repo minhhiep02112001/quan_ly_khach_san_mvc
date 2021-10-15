@@ -176,10 +176,6 @@
                                             </h3>
 
                                             <div class="ratings"></div>
-                                            <div class="items_status mg-bottom-10 mg-top-10">
-                                                <?= $item['status'] ? '<span class="non_vat">Đã đặt</span>' :' <span>Còn phòng</span>'?>
-
-                                            </div>
                                             <div class="des_booking">
                                                 <p class="description"><?= $item['title']?></p>
                                             </div>
@@ -228,7 +224,7 @@
                                 <h3 class="name">
                                     <a href="./article/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng"><?= $item['title']?></a>
                                 </h3>
-                                <span class="info">14:52 22/11/2018 </span>
+                                <span class="info"><?= date("H:i:s d-m-Y", strtotime( $item['created_at'] ))?> , <?= $item['view']?> lượt xem </span>
                                 <p class="text"><?= $item['summary']?></p>
                             </div>
                         </div>

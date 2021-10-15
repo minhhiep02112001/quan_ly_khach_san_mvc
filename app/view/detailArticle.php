@@ -129,7 +129,8 @@
                         <h1 class="title margin-bottom-lg"><?= $article['title']?></h1>
                         <div class="row margin-bottom-lg">
                             <div class="col-md-12">
-                                <span class="h5"><?= date("d-m-Y H:i:s", strtotime( $article['created_at'] ))?></span>
+                                <span class="h5"><?= date("d-m-Y H:i:s", strtotime( $article['created_at'] ))?></span><br>
+                                <span class="h5">Lượt xem : <?=  $article['view']  ?></span>
                             </div>
                             <div class="col-md-12">
 
@@ -152,22 +153,14 @@
                     <div class="panel-body">
                         <div id="idcomment" class="nv-fullbg">
                             <div class="row clearfix margin-bottom-lg">
-                                <div class="col-xs-12 text-left">
-                                    <p class="comment-title"><em class="fa fa-comments">&nbsp;</em> Ý kiến bạn đọc</p>
-                                </div>
-                                <div class="col-xs-12 text-right">
-                                    <select id="sort" class="form-control">
-                                        <option value="0"  selected="selected">Sắp xếp theo bình luận mới</option>
-                                        <option value="1" >Sắp xếp theo bình luận cũ</option>
-                                        <option value="2" >Sắp xếp theo số lượt thích</option>
-                                    </select>
+                                <div class="col-xs-24 text-left">
+                                    <div id="fb-root"></div>
+                                    <div class="fb-comments"
+                                         data-href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>"
+                                         data-width="100%" data-numposts="5"></div>
                                 </div>
                             </div>
-                            <div id="formcomment" class="comment-form">
-                                <div class="alert alert-danger fade in">
-                                    <a title="Đăng nhập" href="#" onclick="return loginForm('');">Bạn cần đăng nhập với tư cách là <strong>Thành viên chính thức</strong> để có thể bình luận</a>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -604,7 +597,7 @@
     src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script
     src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
-
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=1393238477712926&autoLogAppEvents=1" nonce="1aWzcUMT"></script>
 </body>
 <!-- SiteModal Required!!! -->
 <div id="sitemodal" class="modal fade" role="dialog">

@@ -8,6 +8,10 @@ if(isset($_SESSION['success'])){
     extract($_SESSION['success']);
     unset($_SESSION['success']);
 }
+if(isset($_SESSION['error_vn_pay'])){
+    $status_vnpay = $_SESSION['error_vn_pay'];
+    unset($_SESSION['error_vn_pay']);
+}
 ?>
 
 
@@ -130,11 +134,15 @@ if(isset($_SESSION['success'])){
             <?php if(isset($status)):?>
                 <p style="padding: 7px 5px ; border-radius: 5px; ; background: #33c319; color: black"><?=$status?></p>
             <?php endif;?>
+
+            <?php if(isset($status_vnpay)):?>
+                <p style="padding: 7px 5px ; border-radius: 5px; ; background: #de3247; color: black"><?=$status_vnpay?></p>
+            <?php endif;?>
             <div class="col-md-24" style="padding: 0">
                 <div class="page">
 
                     <div class="row">
-                        <div class="col-sm-12 col-md-16">
+                        <div class="col-sm-12 col-md-18">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3>Thông tin đặt hàng</h3>
@@ -157,8 +165,8 @@ if(isset($_SESSION['success'])){
                                                 <tr style="font-size: 13px;">
                                                     <td><?= $item['code'] ?></td>
                                                     <td ><?= $item['title'] ?></td>
-                                                    <td><?= date("d-m-Y", strtotime( $item['start'] )) ?></td>
-                                                    <td><?= date("d-m-Y", strtotime( $item['end'] )) ?></td>
+                                                    <td style="width: 70px;"><?= date("d-m-Y", strtotime( $item['start'] )) ?></td>
+                                                    <td style="width: 70px;"><?= date("d-m-Y", strtotime( $item['end'] )) ?></td>
                                                     <td style="text-align: center"><?= $item['count_people']?></td>
                                                     <td style="text-align: center;">
                                                         <?php if ($item['status'] == 0): ?>
@@ -178,7 +186,10 @@ if(isset($_SESSION['success'])){
                                                                   style="padding: 5px 2px; background: #f4543c; color: #fff; font-size:11px;"><?= getOrderStatus($item['status'])?></span>
                                                         <?php endif; ?>
                                                     </td>
-                                                    <td style="text-align: center;">
+                                                    <td style="text-align: center ">
+                                                        <?php if( $item['status'] == 1): ?>
+                                                            <button class="btn btn-success btn-vnpay" data-id="<?=$item['id']?>" style="font-size: 9px;line-height:11px;padding: 5px 8px;  height: 35px;" data-id="<?= $item['id']?>">Thanh toán online</button>
+                                                        <?php endif;?>
                                                         <?php if(in_array($item['status'] , [0,1])): ?>
                                                             <button class="btn btn-primary btn-cancel-order" style="font-size: 11px;padding: 5px 8px;  height: 35px;" data-id="<?= $item['id']?>">Hủy</button>
                                                         <?php endif;?>
@@ -186,17 +197,7 @@ if(isset($_SESSION['success'])){
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <th>Mã</th>
-                                            <th>Tên Phòng</th>
-                                            <th>Ngày đến</th>
-                                            <th>Ngày đi</th>
-                                            <th>Số người</th>
-                                            <th>Trạng thái</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </tfoot>
+
                                     </table>
                                     <!-- Modal -->
                                     <div class="modal fade" id="myModal" role="dialog">
@@ -228,7 +229,7 @@ if(isset($_SESSION['success'])){
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-8">
+                        <div class="col-sm-12 col-md-6">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">Thay đổi thông tin</div>
                                 <div class="panel-body loadContactForm">
@@ -637,40 +638,8 @@ if(isset($_SESSION['success'])){
 
 <script type="text/javascript"
         src="http://maps.google.com/maps/api/js?key=AIzaSyC8ODAzZ75hsAufVBSffnwvKfTOT6TnnNQ"></script>
-<script>
-    var ele = 'company-map-293';
-    var map, marker, ca, cf, a, f, z;
-    ca = parseFloat($('#' + ele).data('clat'));
-    cf = parseFloat($('#' + ele).data('clng'));
-    a = parseFloat($('#' + ele).data('lat'));
-    f = parseFloat($('#' + ele).data('lng'));
-    z = parseInt($('#' + ele).data('zoom'));
-    map = new google.maps.Map(document.getElementById(ele), {
-        zoom: z,
-        center: {
-            lat: ca,
-            lng: cf
-        }
-    });
-    marker = new google.maps.Marker({
-        map: map,
-        position: new google.maps.LatLng(a, f),
-        draggable: false,
-        animation: google.maps.Animation.DROP
-    });
-</script>
-<!-- <script>
-    ( function(d, s, id) {
-        var js,
-        fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id))
-            return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "./public/client/../connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1813595862224723";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script> -->
+
+
 <script src="./public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
 <script src="./public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
 <script src="./public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
@@ -737,16 +706,19 @@ if(isset($_SESSION['success'])){
         $("#form-update-order").submit();
     });
 
+    $(document).on('click' , '.btn-vnpay' , function (){
+       var id = $(this).data('id');
+       location.href="/online/payment/"+id;
+    });
+
     $(document).ready(function () {
-        // Setup - add a text input to each footer cell
-        // $('#example tfoot th').each( function () {
-        //     var title = $(this).text();
-        //     $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
-        // } );
-
-        // DataTable
-        var table = $('#example').DataTable({});
-
+        var table = $('#example').DataTable({
+            "paging":   true,
+            "ordering": false,
+            "info":     true,
+            "pageLength": 5,
+            lengthMenu: [[5, 10, 20, -1], [5, 10, 20 , "null"]]
+        });
     });
 </script>
 </body>

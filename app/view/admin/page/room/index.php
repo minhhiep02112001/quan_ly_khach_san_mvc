@@ -59,7 +59,6 @@ if (isset($_SESSION['success'])) {
                             <th width="10%" class="text-center">Giá / ngày</th>
                             <th >Mô tả ngắn</th>
                             <th width="8%">Số người</th>
-                            <th width="8%">Tình trạng</th>
                             <th width="8%">Trạng thái</th>
                             <th style="width: 80px; box-sizing: content-box">Hành động</th>
                         </tr>
@@ -79,15 +78,7 @@ if (isset($_SESSION['success'])) {
                                     </td>
                                     <td class=""><?= $item['summary']?> </td>
                                     <td class="text-center"><?= $item['count_people']?></td>
-                                    <td class="text-center">
 
-                                        <?php if ($item['status']): ?>
-                                            <span class="badge bg-green">đã đặt</span>
-                                        <?php else: ?>
-                                            <span class="badge bg-red">chưa đặt</span>
-                                        <?php endif ?>
-                                    </td>
-                                   
                                     <td>
                                         <?php if ($item['active']): ?>
                                             <span class="badge bg-green">kích hoạt</span>
@@ -99,8 +90,8 @@ if (isset($_SESSION['success'])) {
                                     <td>
                                         <a href="./admin/room/edit/<?= $item['id'] ?>"
                                            class="btn btn-xs btn-warning">Sửa</a>
-                                        <a href="./admin/room/delete/<?= $item['id'] ?>"
-                                           class="btn btn-xs btn-danger btn-delete">Xóa</a>
+                                        <button type="button" data-id="<?= $item['id'] ?>" data-model="room"
+                                                class="btn btn-xs btn-danger btn-delete-record">Xóa</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

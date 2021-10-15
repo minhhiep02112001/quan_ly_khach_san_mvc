@@ -18,7 +18,11 @@ $route = [
 
     // Client booked room :
     'booked/room' => ['method' => 'POST', 'use' => 'CartController@orderRoom'],
-
+    'online/payment/(\d+)' => ['method' => 'GET', 'use' => 'PaymentController@index'],
+    'online/payment/return' => ['method' => 'GET', 'use' => 'PaymentController@vnPayReturn'],
+//    Route::get('thanh-toan/online' , 'CartController@viewInformationOrderOnline')->name('thanh-toan.online');
+//Route::post('payments/online', 'CartController@paymentsPost')->name('payments.online');
+//Route::get('vnpay/return', 'CartController@vnpayReturn')->name('vnpay-return');
 
     // Admin Login
     'admin/login'=>['method' => 'GET', 'use' => 'admin/AuthController@login'],

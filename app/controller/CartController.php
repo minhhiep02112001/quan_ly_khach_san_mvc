@@ -66,14 +66,16 @@ class CartController extends Controller
 
         $sql = "SELECT room.id FROM room WHERE id not in (
             SELECT room_id from order_detail WHERE order_id in 
-            (SELECT id from orders WHERE (start <= '{$start->format('Y-m-d')}' and end >= '{$start->format('Y-m-d')}') 
-                                      or (start <= '{$end->format('Y-m-d')}' and end >= '{$end->format('Y-m-d')}')));";
+            (SELECT id from orders WHERE ((start <= '{$start->format('Y-m-d')}' and end >= '{$start->format('Y-m-d')}') 
+                                      or (start <= '{$end->format('Y-m-d')}' and end >= '{$end->format('Y-m-d')}'))
+                AND orders.`status` IN (0,1,2) ));";
+
         $data = $this->_db->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
         print_r(array_column($data, 'id'));
 
         if (!in_array($_POST['room_id'], array_column($data, 'id'))) {
             $errors['old'] = $request->getParams();
-            $errors['error'] = ['booked-day' => 'Các ngày bạn đặt đã có người thuê trước rồi , Vui lòng chọn lại ngày !!!'];
+            $errors['error'] = ['booked-day' => 'Các ngày bạn đặt đã có người thuê trước rồi hoặc đang ở  , Vui lòng chọn lại ngày !!!'];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}#booking");
             exit();

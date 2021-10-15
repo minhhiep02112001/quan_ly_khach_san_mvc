@@ -107,17 +107,19 @@ class UserController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
-            $image = uploadImage($_FILES['image'], './public/upload/user/');
-        }
+
         $data = [
             'name'=>arrayGet($_POST , 'name' ),
             'email'=>arrayGet($_POST , 'email' ),
             'phone'=>arrayGet($_POST , 'phone' ),
             'active'=>arrayGet($_POST , 'active' ,0 ),
             'password'=>md5(arrayGet($_POST , 'password')),
-            'image'=> $image ??'',
         ];
+
+        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
+            $image = uploadImage($_FILES['image'], './public/upload/user/');
+            $data['image'] = $image ??'';
+        }
 
         $record = $this->_db->create($data);
 

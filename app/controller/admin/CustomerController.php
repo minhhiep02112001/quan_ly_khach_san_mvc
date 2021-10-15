@@ -80,7 +80,7 @@ class CustomerController extends Controller
             'email' => 'required|email|unique:customer,email',
             'password' => 'required|min:6',
             'phone' => 'required|regex:/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/|unique:customer,phone',
-            'image' => 'image|size:2000000'
+            'image' => 'nullable|image|size:2000000'
         ]);
 
         $request->message([
@@ -110,17 +110,19 @@ class CustomerController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
-            $image = uploadImage($_FILES['image'], './public/upload/customer/');
-        }
+
         $data = [
             'name' => arrayGet($_POST, 'name'),
             'email' => arrayGet($_POST, 'email'),
             'phone' => arrayGet($_POST, 'phone'),
             'active' => arrayGet($_POST, 'active', 0),
             'password' => md5(arrayGet($_POST, 'password')),
-            'image' => $image ?? '',
         ];
+
+        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
+            $image = uploadImage($_FILES['image'], './public/upload/customer/');
+            $data['image'] = $image ?? '';
+        }
 
         $record = $this->_db->create($data);
 

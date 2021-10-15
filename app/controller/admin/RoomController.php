@@ -189,7 +189,7 @@ class RoomController extends Controller
             'active'=>arrayGet($_POST , 'active' ,0 ),
             'price'=>arrayGet($_POST , 'price' ,0 ),
             'details_description'=>arrayGet($_POST , 'details_description'),
-            'status'=> arrayGet($_POST , 'status' ,0 ),
+
             'count_people'=>arrayGet($_POST , 'count_people' ,0 )
         ];
 

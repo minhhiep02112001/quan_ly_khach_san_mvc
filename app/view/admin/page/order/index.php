@@ -7,11 +7,9 @@ if (isset($_SESSION['success'])) {
 ?>
 <section class="content-header">
     <h1>
-        Danh sách phòng
+        Quản lý đơn đặt phòng
     </h1>
-    <ol class="breadcrumb">
-        <a href="./admin/room/create" class="btn btn-success btn-sm" style="color: #fff">Thêm phòng</a>
-    </ol>
+
 </section>
 <!-- Main content -->
 <section class="content">
@@ -27,6 +25,10 @@ if (isset($_SESSION['success'])) {
                     <form action="" type="get">
                         <div class="form-group row">
                             <div class="col-xs-3">
+                                <input class="form-control" name="code" placeholder="Code ..."
+                                       value="<?= $_GET['code'] ?? '' ?>" type="text">
+                            </div>
+                            <div class="col-xs-2">
                                 <input class="form-control" name="name" placeholder="Họ tên ..."
                                        value="<?= $_GET['name'] ?? '' ?>" type="text">
                             </div>
@@ -34,11 +36,11 @@ if (isset($_SESSION['success'])) {
                                 <input class="form-control" name="email" type="text" value="<?= $_GET['email'] ?? '' ?>"
                                        placeholder="Email ...">
                             </div>
-                            <div class="col-xs-3">
+                            <div class="col-xs-2">
                                 <input class="form-control" name="phone" type="text" value="<?= $_GET['phone'] ?? '' ?>"
                                        placeholder="Phone ...">
                             </div>
-                            <div class="col-xs-3">
+                            <div class="col-xs-2">
                                 <button type="submit" class="btn btn-primary" style="width: 100%;">Tìm kiếm</button>
                             </div>
                         </div>

@@ -86,8 +86,8 @@ if (isset($_SESSION['success'])) {
                                     <td>
                                         <a href="./admin/customer/edit/<?= $key['id'] ?>"
                                            class="btn btn-xs btn-warning">Sửa</a>
-                                        <a href="./admin/customer/delete/<?= $key['id'] ?>"
-                                           class="btn btn-xs btn-danger btn-delete">Xóa</a>
+                                        <button type="button" data-id="<?= $key['id'] ?>" data-model="customer"
+                                                class="btn btn-xs btn-danger btn-delete-record">Xóa</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

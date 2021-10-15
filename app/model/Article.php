@@ -21,7 +21,7 @@ class Article extends Model
     function getAll($data = [] , $limit = 0 , $offset = 0){
 
         return[
-            'data' => $this->table($this->setTable())->whereLikes($data)->limit($limit,$offset)->orderBy('id')->all(),
+            'data' => $this->table($this->setTable())->whereLikes($data)->limit($limit,$offset)->orderBy('id','desc')->all(),
             'total' => count($this->table($this->setTable())->whereLikes($data)->all())
         ];
 
