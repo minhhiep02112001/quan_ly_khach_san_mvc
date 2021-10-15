@@ -19,29 +19,33 @@ class User extends Model
         return [];
     }
 
-    function getAll($data = [] , $limit = 0 , $offset = 0){
+    function getAll($data = [], $limit = 0, $offset = 0)
+    {
 
-        return[
-            'data' => $this->table($this->setTable())->whereLikes($data)->limit($limit,$offset)->orderBy('id','desc')->all(),
+        return [
+            'data' => $this->table($this->setTable())->whereLikes($data)->limit($limit, $offset)->orderBy('id', 'desc')->all(),
             'total' => count($this->table($this->setTable())->whereLikes($data)->all())
         ];
 
     }
 
-    function create($data){
+    function create($data)
+    {
         return $this->table($this->setTable())->insert($data);
     }
 
-    public function findId($id){
-        return $this->table($this->setTable())->where('id' ,'=' , $id)->find();
-    }
-
-    public  function updateRecord($column , $value , $data = [])
+    public function findId($id)
     {
-        return $this->table($this->setTable())->update($column , $value , $data);
+        return $this->table($this->setTable())->where('id', '=', $id)->find();
     }
 
-    public  function deleteRecord($column , $value){
-        return $this->table($this->setTable())->delete($column , $value);
+    public function updateRecord($column, $value, $data = [])
+    {
+        return $this->table($this->setTable())->update($column, $value, $data);
+    }
+
+    public function deleteRecord($column, $value)
+    {
+        return $this->table($this->setTable())->delete($column, $value);
     }
 }

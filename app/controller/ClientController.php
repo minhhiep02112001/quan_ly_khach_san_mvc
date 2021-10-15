@@ -29,7 +29,7 @@ class ClientController extends Controller
     {
         $room = $this->_db->table('room')->where('id', '=', $id)->where('active', '=', 1)->find();
 
-        if(!$room){
+        if (!$room) {
             return loadError();
         }
 
@@ -51,11 +51,11 @@ class ClientController extends Controller
     {
         $article = $this->_db->table('article')->where('id', '=', $id)->where('active', '=', 1)->find();
 
-        if(!$article){
+        if (!$article) {
             return loadError();
         }
 
-        $this->_db->table('article')->query("UPDATE `article` SET `view` = ".++$article['view']." where id = $id")->execute();
+        $this->_db->table('article')->query("UPDATE `article` SET `view` = " . ++$article['view'] . " where id = $id")->execute();
         $this->render("detailArticle", [
             'article' => $article
         ]);
@@ -63,7 +63,7 @@ class ClientController extends Controller
 
     public function search()
     {
-        if (!isset($_GET['start']) || !isset($_GET['end'])){
+        if (!isset($_GET['start']) || !isset($_GET['end'])) {
             header("Location:/");
             exit();
         }

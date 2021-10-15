@@ -70,7 +70,7 @@ class AuthController extends Controller
             exit();
         }
 
-        if(!$user['active']){
+        if (!$user['active']) {
             $errors['error'] = ["Tài khoản của bạn đã bị khóa !!!"];
             $_SESSION['validate_data'] = $errors;
             header("Location:{$_SERVER["HTTP_REFERER"]}");

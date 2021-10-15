@@ -97,7 +97,7 @@ class OrderController extends Controller
 
         $record = $this->_db->updateRecord('id', $id, $data);
 
-        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:/admin/order");
         exit();
     }

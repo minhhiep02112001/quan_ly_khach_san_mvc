@@ -10,29 +10,32 @@ use Core\Request;
 
 class RoomController extends Controller
 {
-    private $_config ;
+    private $_config;
     protected $_db;
+
     public function __construct()
     {
         global $config;
-        if(!isset($_SESSION['admin.login'])){
+        if (!isset($_SESSION['admin.login'])) {
             header("Location:/admin/login");
             exit();
         }
         $this->_config = $config;
         $this->_db = $this->model('Room');
     }
-    function index(){
+
+    function index()
+    {
         $page = ($_REQUEST['page']) ?? 1;
         $limit = $this->_config['pagination']['limit'];
-        $start = ( $page - 1 ) * $limit;
+        $start = ($page - 1) * $limit;
         unset($_REQUEST['page']);
 
-        $data_search=[]; /// tìm kiếm
+        $data_search = []; /// tìm kiếm
         if (count($_REQUEST) > 0) {
             $url_param = ""; /// parameter url pagination
             foreach ($_REQUEST as $key => $value) {
-                if(empty($value)){
+                if (empty($value)) {
                     continue;
                 }
                 $data_search[$key] = $value;
@@ -40,7 +43,7 @@ class RoomController extends Controller
             }
         }
 
-        $data = $this->_db->getAll( $data_search ,$limit , $start);
+        $data = $this->_db->getAll($data_search, $limit, $start);
 
         $config = [
             'total' => $data['total'] ?? 0,
@@ -50,24 +53,26 @@ class RoomController extends Controller
             'param' => $url_param ?? ""
         ];
 
-        $page =  new Pagination($config);
+        $page = new Pagination($config);
 
 
-        $this->render('admin/index',[
-            'page'=>'room/index',
-            'rooms'=> $data['data'],
+        $this->render('admin/index', [
+            'page' => 'room/index',
+            'rooms' => $data['data'],
             'paginate' => $page,
             'start' => $start
         ]);
     }
 
-    function create(){
-        $this->render('admin/index',[
-            'page'=> 'room/create'
+    function create()
+    {
+        $this->render('admin/index', [
+            'page' => 'room/create'
         ]);
     }
 
-    function store(){
+    function store()
+    {
         $request = new Request();
 
         $request->rule([
@@ -88,9 +93,9 @@ class RoomController extends Controller
 
         $validate = $request->validate();
 
-        if(!$validate){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        if (!$validate) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -99,23 +104,23 @@ class RoomController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
+        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
             $image = uploadImage($_FILES['image'], './public/upload/room/');
         }
         $data = [
-            'title'=>arrayGet($_POST , 'title' ),
-            'slug'=> createSlug(arrayGet($_POST , 'title' )) ,
-            'summary'=>arrayGet($_POST , 'summary' ),
-            'active'=>arrayGet($_POST , 'active' ,0 ),
-            'price'=>arrayGet($_POST , 'price' ,0 ),
-            'details_description'=>arrayGet($_POST , 'details_description'),
-            'image'=> $image ??'',
-            'count_people'=>arrayGet($_POST , 'count_people' ,0 )
+            'title' => arrayGet($_POST, 'title'),
+            'slug' => createSlug(arrayGet($_POST, 'title')),
+            'summary' => arrayGet($_POST, 'summary'),
+            'active' => arrayGet($_POST, 'active', 0),
+            'price' => arrayGet($_POST, 'price', 0),
+            'details_description' => arrayGet($_POST, 'details_description'),
+            'image' => $image ?? '',
+            'count_people' => arrayGet($_POST, 'count_people', 0)
         ];
 
         $record = $this->_db->create($data);
 
-        if(!$record){
+        if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
@@ -125,35 +130,37 @@ class RoomController extends Controller
             header("Location:{$_SERVER["HTTP_REFERER"]}");
             exit();
         }
-        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:/admin/room");
         exit();
 
     }
 
-    public  function edit($id){
+    public function edit($id)
+    {
         $room = $this->_db->findId($id);
-        if(!$room){
+        if (!$room) {
             return loadError();
         }
-        $this->render('admin/index',[
-            'page'=>'room/edit',
-            'room'=>$room
+        $this->render('admin/index', [
+            'page' => 'room/edit',
+            'room' => $room
         ]);
     }
 
-    public function update($id){
+    public function update($id)
+    {
 
         $room = $this->_db->findId($id);
 
-        if(!$room){
+        if (!$room) {
             return loadError();
         }
 
         $request = new Request();
 
         $request->rule([
-            'title' => 'required|unique:room,title,'.$id,
+            'title' => 'required|unique:room,title,' . $id,
             'summary' => 'required',
             'details_description' => 'required',
             'image' => 'nullable|image|size:2000000'
@@ -170,9 +177,9 @@ class RoomController extends Controller
 
         $validate = $request->validate();
 
-        if(!$validate){
-            foreach ($request->errors() as $key){
-                $error[]= reset($key);
+        if (!$validate) {
+            foreach ($request->errors() as $key) {
+                $error[] = reset($key);
             }
             $errors = [];
             $errors['old'] = $request->getParams();
@@ -183,25 +190,24 @@ class RoomController extends Controller
         }
 
         $data = [
-            'title'=>arrayGet($_POST , 'title' ),
-            'slug'=> createSlug(arrayGet($_POST , 'title' )) ,
-            'summary'=>arrayGet($_POST , 'summary' ),
-            'active'=>arrayGet($_POST , 'active' ,0 ),
-            'price'=>arrayGet($_POST , 'price' ,0 ),
-            'details_description'=>arrayGet($_POST , 'details_description'),
-
-            'count_people'=>arrayGet($_POST , 'count_people' ,0 )
+            'title' => arrayGet($_POST, 'title'),
+            'slug' => createSlug(arrayGet($_POST, 'title')),
+            'summary' => arrayGet($_POST, 'summary'),
+            'active' => arrayGet($_POST, 'active', 0),
+            'price' => arrayGet($_POST, 'price', 0),
+            'details_description' => arrayGet($_POST, 'details_description'),
+            'count_people' => arrayGet($_POST, 'count_people', 0)
         ];
 
-        if(isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE ) {
+        if (isset($_FILES['image']) && !$_FILES['image']['error'] == UPLOAD_ERR_NO_FILE) {
             $image = uploadImage($_FILES['image'], './public/upload/user/');
             @unlink($room['image']);
-            $data['image']=$image;
+            $data['image'] = $image;
         }
 
 
-        $record = $this->_db->updateRecord('id' , $id , $data);
-        if(!$record){
+        $record = $this->_db->updateRecord('id', $id, $data);
+        if (!$record) {
             $errors = [];
             $errors['old'] = $request->getParams();
             $errors['error'] = [
@@ -212,23 +218,25 @@ class RoomController extends Controller
             exit();
         }
 
-        $_SESSION['success'] = [ 'status' => 'Success !!!' ];
+        $_SESSION['success'] = ['status' => 'Success !!!'];
         header("Location:/admin/room");
         exit();
     }
-    public function destroy($id){
+
+    public function destroy($id)
+    {
         $room = $this->_db->findId($id); /// kiểm tra tồn tại user
-        if(!$room){
+        if (!$room) {
             return loadError();
         }
 
-        if($this->_db->deleteRecord('id' , $id)){
+        if ($this->_db->deleteRecord('id', $id)) {
             $_SESSION['success'] = [
                 'status' => 'Success !!!'
             ];
             header("Location:/admin/room");
             exit();
-        }else{
+        } else {
             $_SESSION['success'] = [
                 'error' => 'Error !!!'
             ];
