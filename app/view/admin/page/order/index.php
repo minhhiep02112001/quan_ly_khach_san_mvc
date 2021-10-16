@@ -9,7 +9,9 @@ if (isset($_SESSION['success'])) {
     <h1>
         Quản lý đơn đặt phòng
     </h1>
-
+    <ol class="breadcrumb">
+        <a href="./admin/order/create" class="btn btn-success btn-sm" style="color: #fff">Thêm đơn đặt phòng</a>
+    </ol>
 </section>
 <!-- Main content -->
 <section class="content">

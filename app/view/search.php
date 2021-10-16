@@ -120,7 +120,7 @@
                                 class="resize_style section latest-blog outer-bottom-vs wow animated animatedFadeInUp fadeInUp mg-style mg-bottom-10 newroom mg-pd-0 animated">
                             <div style="margin-bottom: 5px;">
                                 <h2 class="section-title"><a class="pull-left" href="Tang-tret/index.html"
-                                                             title="Tầng trệt">Kết quả tìm kiếm</a>
+                                                             title="Tầng trệt">Kết quả tìm kiếm (<?= count($data)?>)</a>
                                     <div class="clear"></div>
                                 </h2>
                                 <span class="pull-right">
@@ -140,7 +140,7 @@
                                                                     <div class="box_item">
                                                                     <span class="thumbnail">
                                                                         <div class="item">
-                                                                            <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Phòng 505"
+                                                                            <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>" title="Phòng 505"
                                                                                class="effect-chico ecfix box_ribbon_vg">  <img
                                                                                         src="<?=$item['image']?>"
                                                                                         alt="Phòng 505">
@@ -150,7 +150,7 @@
                                                                         <hr class="line">
                                                                         <div class="items_info_room">
                                                                             <h4 class="des_booking">
-                                                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html"
+                                                                                <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>"
                                                                                    title="Phòng 505"><?=$item['title']?></a>
                                                                             </h4>
 
@@ -169,7 +169,7 @@
                                                                                 </div>
                                                                                 <div class="col-md-24 col-sm-24 text-center ">
                                                                                     <hr class="line">
-                                                                                    <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html#booking"
+                                                                                    <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>#booking"
                                                                                        class="btn btn-primary pull-left">ĐẶT
                                                                                         PHÒNG</a>
 

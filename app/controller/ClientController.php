@@ -36,8 +36,7 @@ class ClientController extends Controller
         $nextThirtyDay = date('Y-m-d', strtotime('+30 days'));
 
         $sql = "SELECT  orders.`start` , orders.`end`    
-                FROM orders RIGHT JOIN order_detail ON orders.ID = order_detail.order_id 
-                WHERE order_detail.room_id = $id  AND ( CURDATE() <= orders.`end` AND orders.`end` <= '$nextThirtyDay' ) AND orders.`status` IN (0,1,2)";
+                FROM orders WHERE orders.room_id = $id  AND ( CURDATE() <= orders.`end` AND orders.`end` <= '$nextThirtyDay' ) AND orders.`status` IN (0,1,2)";
 
         $bookedDate = $this->_db->table('orders')->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -64,7 +63,7 @@ class ClientController extends Controller
     public function search()
     {
         if (!isset($_GET['start']) || !isset($_GET['end'])) {
-            header("Location:/");
+            header("Location:". WEB_ROOT."/");
             exit();
         }
         try {
@@ -74,9 +73,8 @@ class ClientController extends Controller
             $start = $start ?? '';
             $end = $end ?? '';
         }
-        $sql = "SELECT * FROM room WHERE id not in (
-            SELECT room_id from order_detail WHERE order_id in 
-            (SELECT id from orders WHERE ((start <= '$start' and end >= '$start') or (start <= '$end' and end >= '$end')) AND orders.status IN (0,1,2)));";
+        $sql = "SELECT * FROM room WHERE room.`active` = 1 AND id not in (
+            SELECT room_id  from orders WHERE ((start <= '$start' and end >= '$start') or (start <= '$end' and end >= '$end')) AND orders.status IN (0,1,2));";
 
         $data = $this->_db->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
 
@@ -88,7 +86,7 @@ class ClientController extends Controller
     public function updateStatusOrder($id)
     {
         if (!isset($_SESSION['user.login'])) {
-            header("Location:/login");
+            header("Location:". WEB_ROOT."/login");
         }
         $db_order = $this->model('Order');
         $order = $this->_db->table('orders')->where('id', '=', $id)->find();

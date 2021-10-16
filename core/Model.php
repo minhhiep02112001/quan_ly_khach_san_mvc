@@ -51,6 +51,7 @@ abstract class Model extends Database
             }
             $parameter = implode(",", array_keys($arr_value));
             $sql = "INSERT INTO {$this->setTable()} ($param) VALUES ($parameter)";
+
             $stmt =  $this->_conn->prepare($sql);
             $stmt->execute($arr_value);
             return $this->_conn->lastInsertId();
@@ -72,6 +73,7 @@ abstract class Model extends Database
             }
             $parameter = implode(",", array_keys($arr_value));
             $sql = "INSERT INTO {$this->setTable()} ($param) VALUES ($parameter)";
+
             $stmt =  $this->_conn->prepare($sql);
             $stmt->execute($arr_value);
             $id = $this->_conn->lastInsertId();

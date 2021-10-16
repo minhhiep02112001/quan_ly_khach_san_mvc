@@ -55,7 +55,7 @@ if (isset($_SESSION['success'])) {
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email :</label>
-                            <input type="email" class="form-control" name="email" value="<?= $old['email'] ?? $_SESSION['admin.login']['email'] ?? '' ?>"
+                            <input type="email" disabled class="form-control" name="email" value="<?= $old['email'] ?? $_SESSION['admin.login']['email'] ?? '' ?>"
                                    id="exampleInputEmail1" placeholder="Enter email">
                         </div>
                         <div class="form-group">

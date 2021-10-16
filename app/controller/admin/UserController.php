@@ -9,8 +9,6 @@ use Core\Controller;
 use Core\Pagination;
 use Core\Request;
 
-//use Quan_ly_khach_san\App;
-
 class UserController extends Controller
 {
     private $_config;
@@ -20,7 +18,7 @@ class UserController extends Controller
     {
         global $config;
         if (!isset($_SESSION['admin.login'])) {
-            header("Location:/admin/login");
+            header("Location:". WEB_ROOT."/admin/login");
             exit();
         }
         $this->_config = $config;
@@ -140,7 +138,7 @@ class UserController extends Controller
             exit();
         }
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/user");
+        header("Location:". WEB_ROOT."/admin/user");
         exit();
 
     }
@@ -233,7 +231,7 @@ class UserController extends Controller
         }
 
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/user");
+        header("Location:". WEB_ROOT."/admin/user");
         exit();
     }
 
@@ -248,13 +246,13 @@ class UserController extends Controller
             $_SESSION['success'] = [
                 'status' => 'Success !!!'
             ];
-            header("Location:/admin/user");
+            header("Location:". WEB_ROOT."/admin/user");
             exit();
         } else {
             $_SESSION['success'] = [
                 'error' => 'Error !!!'
             ];
-            header("Location:/admin/user");
+            header("Location:". WEB_ROOT."/admin/user");
             exit();
         }
     }

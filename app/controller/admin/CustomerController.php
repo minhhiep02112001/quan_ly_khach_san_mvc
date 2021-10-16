@@ -17,7 +17,7 @@ class CustomerController extends Controller
     {
         global $config;
         if (!isset($_SESSION['admin.login'])) {
-            header("Location:/admin/login");
+            header("Location:". WEB_ROOT."/admin/login");
             exit();
         }
         $this->_config = $config;
@@ -48,7 +48,7 @@ class CustomerController extends Controller
         $config = [
             'total' => $data['total'] ?? 0,
             'limit' => $limit,
-            'url' => './admin/customer',
+            'url' => '/admin/customer',
             'full' => false, //bỏ qua nếu không muốn hiển thị full page
             'param' => $url_param ?? ""
         ];
@@ -137,7 +137,7 @@ class CustomerController extends Controller
             exit();
         }
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/customer");
+        header("Location:". WEB_ROOT."/admin/customer");
         exit();
 
     }
@@ -230,7 +230,7 @@ class CustomerController extends Controller
         }
 
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/customer");
+        header("Location:". WEB_ROOT."/admin/customer");
         exit();
     }
 
@@ -243,11 +243,11 @@ class CustomerController extends Controller
 
         if ($this->_db->deleteRecord('id', $id)) {
             $_SESSION['success'] = ['status' => 'Success !!!'];
-            header("Location:/admin/customer");
+            header("Location:". WEB_ROOT."/admin/customer");
             exit();
         } else {
             $_SESSION['success'] = ['error' => 'Error !!!'];
-            header("Location:/admin/customer");
+            header("Location:". WEB_ROOT."/admin/customer");
             exit();
         }
     }

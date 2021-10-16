@@ -55,6 +55,7 @@
                     <th width="90px">Hình ảnh</th>
                     <th class="text-center" width="15%">Giá / ngày</th>
                     <th class="text-center" width="15%">Số người ở</th>
+                    <th class="text-center" width="15%">Tổng số ngày</th>
                     <th class="text-center" width="15%">Tổng tiền</th>
                 </tr>
                 </thead>
@@ -67,9 +68,10 @@
                                 <img src="<?= $item['image'] ?>" style="width: 100%; height: 100%;" alt="">
                             </div>
                         </td>
-                        <td class="text-center"><?= number_format($item['room_price'], 0, ',', '.') ?> đ</td>
-                        <td class="text-center"><?= $item['order_people'] ?></td>
-                        <td class="text-center"><?= number_format($item['price'] * $order['sum_day'], 0, ',', '.') ?>
+                        <td class="text-center"><?= number_format($item['price_room'], 0, ',', '.') ?> đ</td>
+                        <td class="text-center"><?= $item['count_people'] ?></td>
+                        <td class="text-center"><?= $item['sum_day'] ?></td>
+                        <td class="text-center"><?= number_format($item['total'], 0, ',', '.') ?>
                             đ
                         </td>
                     </tr>
@@ -102,7 +104,7 @@
         <div class="col-xs-12" style="margin-bottom: 10px;">
             <button class="btn btn-default" onclick="window.print();"><i class="fa fa-print"></i> Print</button>
             <a class="btn btn-success pull-right" style="margin-left: 5px;" href="./admin/order"> Quay lại</a>
-            <?php if ($order['status'] != 2): ?>
+            <?php if ($order['status'] < 2): ?>
                 <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal"><i
                             class="fa fa-credit-card"></i> Cập nhật trạng thái
                 </button>

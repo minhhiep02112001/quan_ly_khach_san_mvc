@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function __construct()
     {
         if (!isset($_SESSION['admin.login'])) {
-            header("Location:/admin/login");
+            header("Location:". WEB_ROOT."/admin/login");
             exit();
         }
         $this->_db = new Database();

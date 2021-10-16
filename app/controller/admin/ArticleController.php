@@ -17,7 +17,7 @@ class ArticleController extends Controller
     {
         global $config;
         if (!isset($_SESSION['admin.login'])) {
-            header("Location:/admin/login");
+            header("Location:". WEB_ROOT."/admin/login");
             exit();
         }
         $this->_config = $config;
@@ -130,7 +130,7 @@ class ArticleController extends Controller
             exit();
         }
         $_SESSION['success'] = [ 'status' => 'Success !!!' ];
-        header("Location:/admin/article");
+        header("Location:". WEB_ROOT."/admin/article");
         exit();
 
     }
@@ -217,7 +217,7 @@ class ArticleController extends Controller
         }
 
         $_SESSION['success'] = [ 'status' => 'Success !!!' ];
-        header("Location:/admin/article");
+        header("Location:". WEB_ROOT."/admin/article");
         exit();
     }
 
@@ -230,11 +230,11 @@ class ArticleController extends Controller
 
         if ($this->_db->deleteRecord('id', $id)) {
             $_SESSION['success'] = [ 'status' => 'Success !!!' ];
-            header("Location:/admin/article");
+            header("Location:". WEB_ROOT."/admin/article");
             exit();
         } else {
             $_SESSION['success'] = [ 'error' => 'Error !!!' ];
-            header("Location:/admin/article");
+            header("Location:". WEB_ROOT."/admin/article");
             exit();
         }
     }

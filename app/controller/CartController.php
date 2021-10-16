@@ -20,7 +20,10 @@ class CartController extends Controller
     public function orderRoom()
     {
         if (!isset($_SESSION['user.login'])) {
-            header("Location:/login");
+            $_SESSION['beforAuth'] = [
+                'url_prev' => $_SERVER['HTTP_REFERER'],
+            ];
+            header("Location:". WEB_ROOT."/login");
             exit();
         }
 
@@ -59,19 +62,27 @@ class CartController extends Controller
             exit();
         }
 
+        $room = $this->_db->table('room')->where('id' , '=' , $_POST['room_id'])->find();
+        if ( $_POST['count_people'] > $room['count_people']  ) {
+            $errors = [];
+            $errors['old'] = $request->getParams();
+            $errors['error'] = ['error_count' => "Số người đặt phòng không hợp lệ"];
+
+            $_SESSION['validate_data'] = $errors;
+            header("Location:{$_SERVER["HTTP_REFERER"]}#booking");
+            exit();
+        }
+
         $start = date_create($_POST['start_day']);
         $end = date_create($_POST['end_day']);
         $diff = date_diff($start, $end);
         $count_day = $diff->days + 1;
 
-        $sql = "SELECT room.id FROM room WHERE id not in (
-            SELECT room_id from order_detail WHERE order_id in 
-            (SELECT id from orders WHERE ((start <= '{$start->format('Y-m-d')}' and end >= '{$start->format('Y-m-d')}') 
+        $sql = "SELECT room.id FROM room WHERE id not in  (SELECT orders.room_id from orders WHERE ((start <= '{$start->format('Y-m-d')}' and end >= '{$start->format('Y-m-d')}') 
             or (start <= '{$end->format('Y-m-d')}' and end >= '{$end->format('Y-m-d')}'))
-            AND orders.`status` IN (0,1,2) ));";
+            AND orders.`status` IN (0,1,2) );";
 
         $data = $this->_db->query($sql)->fetchAll(\PDO::FETCH_ASSOC);
-        print_r(array_column($data, 'id'));
 
         if (!in_array($_POST['room_id'], array_column($data, 'id'))) {
             $errors['old'] = $request->getParams();
@@ -82,7 +93,7 @@ class CartController extends Controller
         }
 
         $_dbOrder = $this->model("Order");
-        $_dbOrderDetail = $this->model("OrderDetail");
+
 
         $dataOrder = [
             'code' => "DP" . time(),
@@ -94,22 +105,16 @@ class CartController extends Controller
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'phone' => $_POST['phone'],
-            'sum_day' => $count_day
+            'sum_day' => $count_day,
+            'room_id' => $_POST['room_id'],
+            'price_room' => $_POST['price'],
+            'count_people' => $_POST['count_people']
         ];
-
         $orderId = $_dbOrder->create($dataOrder);
-        if (!empty($orderId)) {
-            $dateOrderDetail = [
-                'room_id' => $_POST['room_id'],
-                'order_id' => $orderId,
-                'price' => $_POST['price'],
-                'count_people' => $_POST['count_people']
-            ];
-            $_dbOrderDetail->create($dateOrderDetail);
-        }
+
         $_SESSION['success'] = ['status' => 'Success !!!'];
 
-        header("Location:/information");
+        header("Location:". WEB_ROOT."/information");
         exit();
     }
 }

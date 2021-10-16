@@ -4,8 +4,8 @@ $route = [
 
     // Client
     '/' => ['method' => 'GET', 'use' => 'ClientController@home'],
-    'room/.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailRoom'],
-    'article/.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailArticle'],
+    '.+-(\d+)' => ['method' => 'GET', 'use' => 'ClientController@detailRoom'],
+    '.+-(\d+).html' => ['method' => 'GET', 'use' => 'ClientController@detailArticle'],
     'search' => ['method' => 'GET', 'use' => 'ClientController@search'],
     'login' => ['method' => 'GET', 'use' => 'AuthClientController@login'],
     'login/post' => ['method' => 'GET', 'use' => 'AuthClientController@postLogin'],
@@ -20,9 +20,6 @@ $route = [
     'booked/room' => ['method' => 'POST', 'use' => 'CartController@orderRoom'],
     'online/payment/(\d+)' => ['method' => 'GET', 'use' => 'PaymentController@index'],
     'online/payment/return' => ['method' => 'GET', 'use' => 'PaymentController@vnPayReturn'],
-//    Route::get('thanh-toan/online' , 'CartController@viewInformationOrderOnline')->name('thanh-toan.online');
-//Route::post('payments/online', 'CartController@paymentsPost')->name('payments.online');
-//Route::get('vnpay/return', 'CartController@vnpayReturn')->name('vnpay-return');
 
     // Admin Login
     'admin/login'=>['method' => 'GET', 'use' => 'admin/AuthController@login'],
@@ -39,6 +36,8 @@ $route = [
 
     // route administration book room  :
     'admin/order'=>['method' => 'GET', 'use' => 'admin/OrderController@index'],
+    'admin/order/create'=>['method' => 'GET', 'use' => 'admin/OrderController@create'],
+    'admin/order/store'=>['method' => 'GET', 'use' => 'admin/OrderController@store'],
     'admin/order/show/(\d+)'=>['method' => 'GET', 'use' => 'admin/OrderController@show'],
     'admin/order/update/(\d+)'=>['method' => 'GET', 'use' => 'admin/OrderController@update'],
 

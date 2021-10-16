@@ -71,7 +71,15 @@ class AuthClientController extends Controller
             exit();
         }
         $_SESSION['user.login'] = $user;
-        header("Location:/");
+
+        if(isset($_SESSION['beforAuth'])){
+            extract($_SESSION['beforAuth']);
+            unset($_SESSION['beforAuth']);
+            header("Location:$url_prev#booking");
+            exit();
+        }
+
+        header("Location:".WEB_ROOT."/");
         exit();
     }
 
@@ -100,6 +108,7 @@ class AuthClientController extends Controller
             'phone.required' => "Số điện thoại không được để trống !!!",
             'phone.regex' => "Số điện thoại không hợp lệ !!!",
             'password.min' => "Mật khẩu phải trên 6 ký tự !!!",
+            'password.required' => "Mật khẩu không được để trống!!!",
 
         ]);
 
@@ -148,19 +157,18 @@ class AuthClientController extends Controller
         if (isset($_SESSION['user.login'])) {
             unset($_SESSION['user.login']);
         }
-        header("Location:/");
+        header("Location:". WEB_ROOT."/");
         exit();
     }
 
     public function information()
     {
         if (!isset($_SESSION['user.login'])) {
-            header("Location:/login");
+            header("Location:". WEB_ROOT."/login");
         }
         $sql = "SELECT orders.`code` , orders.`id` , orders.`status` , orders.total , orders.`start` , orders.`end` , orders.contents , 
-                orders.user_id , room.title , room.image , order_detail.count_people , order_detail.price  FROM orders  
-                RIGHT  JOIN order_detail  ON orders.ID = order_detail.order_id
-                RIGHT  JOIN room  ON order_detail.room_id = room.id
+                orders.user_id , room.title , room.image , orders.count_people , orders.price_room  FROM orders  
+                RIGHT  JOIN room  ON orders.room_id = room.id
                 RIGHT  JOIN `user`  ON `user`.id = orders.user_id
                 WHERE orders.user_id = {$_SESSION['user.login']['id']} Order BY orders.id desc ;";
 
@@ -174,7 +182,7 @@ class AuthClientController extends Controller
     public function updateInformation()
     {
         if (!isset($_SESSION['user.login'])) {
-            header("Location:/login");
+            header("Location:". WEB_ROOT."/login");
         }
         $request = new Request();
 

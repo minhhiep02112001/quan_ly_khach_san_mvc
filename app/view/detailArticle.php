@@ -22,46 +22,46 @@
     <meta property="og:type" content="article" />
     <meta property="og:description" content="Theo lịch dự kiến, tuyển Việt Nam sẽ có buổi tập vào chiều 22&#x002F;11, song vị chiến lược gia người Hàn Quốc đã bất ngờ cho đội tập trên sân Hàng Đẫy buổi sáng mà..." />
     <meta property="og:site_name" content="ATR Hotel" />
-    <meta property="og:image" content="./public/client/uploads/news/2018_11/1_zing_1.jpg" />
+    <meta property="og:image" content="<?= WEB_ROOT ?>/public/client/uploads/news/2018_11/1_zing_1.jpg" />
     <meta property="og:url" content="hlv-park-bat-ngo-doi-lich-tap-kin-cam-cua-phong-vien-tac-nghiep-22.html" />
     <meta property="article:published_time" content="2018-11-22+0714:38:00" />
     <meta property="article:modified_time" content="2018-11-22+0714:40:04" />
     <meta property="article:section" content="Tin tức" />
-    <link rel="shortcut icon" href="./public/client/uploads/logo-xs.png">
+    <link rel="shortcut icon" href="<?= WEB_ROOT ?>/public/client/uploads/logo-xs.png">
     <link rel="canonical" href="hlv-park-bat-ngo-doi-lich-tap-kin-cam-cua-phong-vien-tac-nghiep-22.html">
-    <link rel="alternate" href="../rss/index.html" title="Tin Tức" type="application/rss+xml">
-    <link rel="alternate" href="../rss/Tin-tuc/index.html" title="Tin Tức - Tin tức" type="application/rss+xml">
-    <link rel="alternate" href="../rss/thong-cao-bao-chi/index.html" title="Tin Tức - Thông cáo báo chí" type="application/rss+xml">
-    <link rel="alternate" href="../rss/Ban-tin-noi-bo/index.html" title="Tin Tức - Bản tin nội bộ" type="application/rss+xml">
-    <link rel="alternate" href="../rss/Tin-cong-nghe/index.html" title="Tin Tức - Tin công nghệ" type="application/rss+xml">
-    <link rel="alternate" href="../rss/San-pham/index.html" title="Tin Tức - Sản phẩm" type="application/rss+xml">
-    <link rel="alternate" href="../rss/Doi-tac/index.html" title="Tin Tức - Đối tác" type="application/rss+xml">
-    <link rel="alternate" href="../rss/Tuyen-dung/index.html" title="Tin Tức - Tuyển dụng" type="application/rss+xml">
-    <link rel="amphtml" href="../amp/Tin-tuc/hlv-park-bat-ngo-doi-lich-tap-kin-cam-cua-phong-vien-tac-nghiep-22.html" />
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/index.html" title="Tin Tức" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/Tin-tuc/index.html" title="Tin Tức - Tin tức" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/thong-cao-bao-chi/index.html" title="Tin Tức - Thông cáo báo chí" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/Ban-tin-noi-bo/index.html" title="Tin Tức - Bản tin nội bộ" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/Tin-cong-nghe/index.html" title="Tin Tức - Tin công nghệ" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/San-pham/index.html" title="Tin Tức - Sản phẩm" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/Doi-tac/index.html" title="Tin Tức - Đối tác" type="application/rss+xml">
+    <link rel="alternate" href=".<?= WEB_ROOT ?>/rss/Tuyen-dung/index.html" title="Tin Tức - Tuyển dụng" type="application/rss+xml">
+    <link rel="amphtml" href=".<?= WEB_ROOT ?>/amp/Tin-tuc/hlv-park-bat-ngo-doi-lich-tap-kin-cam-cua-phong-vien-tac-nghiep-22.html" />
     <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link rel="StyleSheet" href="./public/client/assets/css/font-awesome.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/bootstrap.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/simple-line-icons5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/owl.carousel5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/owl.transitions5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/rateit5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/bootstrap-select.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/global_category5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/main5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/blue5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/assets/stylesheets/jednotka_green5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style_15a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/users5a50.css?t=13">
-    <link href="./public/client/assets/js/star-rating/jquery.rating5a50.css?t=13" type="text/css" rel="stylesheet"/>
-    <link href="./public/client/assets/editors/ckeditor/plugins/codesnippet/lib/highlight/styles/github5a50.css?t=13" rel="stylesheet">
-    <link rel="StyleSheet" href="./public/client/themes/default/css/comment5a50.css?t=13" type="text/css" />
-    <link rel="StyleSheet" href="./public/client/themes/default/css/popup5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/contact25a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/assets/css/font-awesome.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/bootstrap.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/simple-line-icons5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/owl.carousel5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/owl.transitions5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/rateit5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/bootstrap-select.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/global_category5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/main5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/blue5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/assets/stylesheets/jednotka_green5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/style5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/style_15a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/users5a50.css?t=13">
+    <link href="<?= WEB_ROOT ?>/public/client/assets/js/star-rating/jquery.rating5a50.css?t=13" type="text/css" rel="stylesheet"/>
+    <link href="<?= WEB_ROOT ?>/public/client/assets/editors/ckeditor/plugins/codesnippet/lib/highlight/styles/github5a50.css?t=13" rel="stylesheet">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/default/css/comment5a50.css?t=13" type="text/css" />
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/default/css/popup5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT ?>/public/client/themes/hotel01/css/contact25a50.css?t=13">
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -107,7 +107,7 @@
                         <div class="col-md-24">
                             <ul class="list-inline list-unstyled text-center">
                                 <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a
-                                        href="../index.html" itemprop="url"
+                                        href=".<?= WEB_ROOT ?>" itemprop="url"
                                         title="Tin Tức"><span class="txt"
                                                               itemprop="title">Tin Tức</span></a></li>
                                 <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a
@@ -129,7 +129,7 @@
                         <h1 class="title margin-bottom-lg"><?= $article['title']?></h1>
                         <div class="row margin-bottom-lg">
                             <div class="col-md-12">
-                                <span class="h5"><?= date("d-m-Y H:i:s", strtotime( $article['created_at'] ))?></span><br>
+                                <span class="h5"><?= date("H:i:s d-m-Y", strtotime( $article['created_at'] ))?></span><br>
                                 <span class="h5">Lượt xem : <?=  $article['view']  ?></span>
                             </div>
                             <div class="col-md-12">
@@ -139,7 +139,7 @@
                         <div class="clearfix">
                             <div class="hometext m-bottom"><?= $article['summary'] ?></div>
                             <figure class="article center">
-                                <img alt="<?= $article['title']?>" src="<?= $article['image']?>" width="460" class="img-thumbnail" />
+                                <img alt="<?= $article['title']?>" src="<?=$article['image']?>" width="460" class="img-thumbnail" />
                             </figure>
                         </div>
                         <div id="news-bodyhtml" class="bodytext margin-bottom-lg">
@@ -156,7 +156,7 @@
                                 <div class="col-xs-24 text-left">
                                     <div id="fb-root"></div>
                                     <div class="fb-comments"
-                                         data-href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>"
+                                         data-href="<?= WEB_ROOT.'/'.$_SERVER['REQUEST_URI']?>"
                                          data-width="100%" data-numposts="5"></div>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
                     <div id='MorganAndMen'>
                         <div id='TheBlogWidgets'></div>
                         <div class='remove-borda'></div>
-                        <div class="popup_content" style="width: 480px"><div style="text-align:center"><img alt="17979" src="./public/client/uploads/about/17979.jpg" style="width:100%" /></div>
+                        <div class="popup_content" style="width: 480px"><div style="text-align:center"><img alt="17979" src="<?= WEB_ROOT ?>/public/client/uploads/about/17979.jpg" style="width:100%" /></div>
                         </div>
                     </div>
                 </div>
@@ -202,14 +202,14 @@
     <div class="logo_footer">
         <div class="row">
             <div class="col-xs-24 col-md-24 col-sm-24 no-padding">
-                <img class="social" src="./public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" />
+                <img class="social" src="<?= WEB_ROOT ?>/public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" />
                 <!-- <h3 class="visible-xs-inline-block">Chúng tôi trên mạng xã hội</h3> -->
                 <div class="social-media">
                     <a href="https://www.facebook.com/nukeviet" target="_blank"><i class="fa fa-facebook fb"></i></a>
                     <a href="https://www.google.com/+nukeviet" target="_blank"><i class="fa fa-google-plus gp"></i></a>
                     <a href="https://www.youtube.com/user/nukeviet" target="_blank"><i class="fa fa-youtube yt"></i></a>
                     <a href="https://twitter.com/nukeviet" target="_blank"><i class="fa fa-twitter tt"></i></a>
-                    <a href="../../feeds/index.html"><i class="fa fa-rss rs"></i></a>
+                    <a href=".<?= WEB_ROOT ?>/feeds/index.html"><i class="fa fa-rss rs"></i></a>
                 </div>
 
             </div>
@@ -224,10 +224,10 @@
                     </div>
                     <div class="module-body">
                         <ul class='list-unstyled superfish'>
-                            <li><a href="../../about/index.html" title="Giới thiệu">Giới thiệu</a></li>
-                            <li><a href="../index.html" title="Tin Tức">Tin Tức</a></li>
-                            <li><a href="../../hop-dap/index.html" title="Hỏi đáp">Hỏi đáp</a></li>
-                            <li><a href="../../contact/index.html" title="Liên hệ">Liên hệ</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/about/index.html" title="Giới thiệu">Giới thiệu</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/index.html" title="Tin Tức">Tin Tức</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/hop-dap/index.html" title="Hỏi đáp">Hỏi đáp</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/contact/index.html" title="Liên hệ">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -237,10 +237,10 @@
                     </div>
                     <div class="module-body">
                         <ul class='list-unstyled superfish'>
-                            <li><a href="../../guide-tourist/huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng dẫn thanh toán</a></li>
-                            <li><a href="../../guide-tourist/huong-dan-dat-phong.html" title="Hướng dẫn đặt phòng">Hướng dẫn đặt phòng</a></li>
-                            <li><a href="../../guide-tourist/index.html" title="Hướng dẫn đặt phòng trực tuyến">Hướng dẫn đặt phòng trực tuyến</a></li>
-                            <li><a href="../../guide-tourist/huong-dan-tim-kiem-can-ho.html" title="Hướng dẫn tìm kiếm căn hộ">Hướng dẫn tìm kiếm căn hộ</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/guide-tourist/huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng dẫn thanh toán</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/guide-tourist/huong-dan-dat-phong.html" title="Hướng dẫn đặt phòng">Hướng dẫn đặt phòng</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/guide-tourist/index.html" title="Hướng dẫn đặt phòng trực tuyến">Hướng dẫn đặt phòng trực tuyến</a></li>
+                            <li><a href=".<?= WEB_ROOT ?>/guide-tourist/huong-dan-tim-kiem-can-ho.html" title="Hướng dẫn tìm kiếm căn hộ">Hướng dẫn tìm kiếm căn hộ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -470,14 +470,14 @@
         </div>
     </div>
 </div>
-<script src="./public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
-<script data-ad-client="ca-pub-6482774583325006" async src="./public/client/../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script src="<?= WEB_ROOT ?>/public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
+<script data-ad-client="ca-pub-6482774583325006" async src="<?= WEB_ROOT ?>/public/client/pagead2.googlesyndication.com/pagead/js/f.txt"></script>
 <script>var nv_base_siteurl="http://bookinghotel.mynukeviet.com/",nv_lang_data="vi",nv_lang_interface="vi",nv_name_variable="nv",nv_fc_variable="op",nv_lang_variable="language",nv_module_name="news",nv_func_name="detail",nv_is_user=0, nv_my_ofs=7,nv_my_abbr="+07",nv_cookie_prefix="nv4",nv_check_pass_mstime=1738000,nv_area_admin=0,nv_safemode=0,theme_responsive=1,nv_is_recaptcha=0;</script>
-<script src="./public/client/assets/js/language/vi5a50.js?t=13"></script>
-<script src="./public/client/assets/js/global5a50.js?t=13"></script>
-<script src="./public/client/themes/default/js/news5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/main5a50.js?t=13"></script>
-<script type="text/javascript" src="./public/client/themes/hotel01/js/users5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/assets/js/language/vi5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/assets/js/global5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/default/js/news5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/main5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/users5a50.js?t=13"></script>
 <script type="text/javascript" data-show="after">
     $(function() {
         checkWidthMenu();
@@ -494,8 +494,17 @@
         }
     });
 </script>
-<script type="text/javascript" src="./public/client/assets/js/star-rating/jquery.rating.pack5a50.js?t=13"></script>
-<script src="./public/client/assets/js/star-rating/jquery.MetaData5a50.js?t=13" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>-->
+<script>
+    $(document).ready(function () {
+        $('form').submit(function () {
+            $.LoadingOverlay("show");
+        });
+    });
+</script>
+<script type="text/javascript" src="<?= WEB_ROOT ?>/public/client/assets/js/star-rating/jquery.rating.pack5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/assets/js/star-rating/jquery.MetaData5a50.js?t=13" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
         var sr = 0;
@@ -515,7 +524,7 @@
         $(".hover-star").rating("select", "0");
     })
 </script>
-<script type="text/javascript" src="./public/client/themes/default/js/comment5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT ?>/public/client/themes/default/js/comment5a50.js?t=13"></script>
 <script type="text/javascript">
     var nv_url_comm = 'http://bookinghotel.mynukeviet.com/index.php?language=vi&amp;nv=comment&amp;module=news&amp;area=8&amp;id=22&amp;allowed=4&amp;checkss=7b2f991dbb5c6591023096b31e8c2cd5&amp;perpage=5';
     $("#sort").change(function() {
@@ -524,9 +533,9 @@
         });
     });
 </script>
-<script type="text/javascript" src="./public/client/assets/editors/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT ?>/public/client/assets/editors/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack5a50.js?t=13"></script>
 <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript" src="./public/client/themes/default/js/popup5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT ?>/public/client/themes/default/js/popup5a50.js?t=13"></script>
 <script type='text/javascript'>
     $(document).ready(function($){
         var timer_close = '0';
@@ -540,22 +549,22 @@
         }
     });
 </script>
-<script src="./public/client/themes/hotel01/js/contact25a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/contact25a50.js?t=13"></script>
 <script>
 
 </script>
-<script src="./public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/echo.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/jquery.easing-1.3.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-slider.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/jquery.rateit.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/lightbox.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-select.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/wow.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/script5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/scripts5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/echo.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/jquery.easing-1.3.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/bootstrap-slider.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/jquery.rateit.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/lightbox.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/bootstrap-select.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/wow.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/script5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT ?>/public/client/themes/hotel01/js/scripts5a50.js?t=13"></script>
 <script>
     $(window).resize(function() {
         console.log('resize called');
@@ -594,9 +603,9 @@
     }
 </script>
 <script
-    src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
+    src="<?= WEB_ROOT ?>/public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script
-    src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
+    src="<?= WEB_ROOT ?>/public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v12.0&appId=1393238477712926&autoLogAppEvents=1" nonce="1aWzcUMT"></script>
 </body>
 <!-- SiteModal Required!!! -->

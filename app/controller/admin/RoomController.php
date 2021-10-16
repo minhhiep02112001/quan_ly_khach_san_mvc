@@ -17,7 +17,7 @@ class RoomController extends Controller
     {
         global $config;
         if (!isset($_SESSION['admin.login'])) {
-            header("Location:/admin/login");
+            header("Location:". WEB_ROOT."/admin/login");
             exit();
         }
         $this->_config = $config;
@@ -48,7 +48,7 @@ class RoomController extends Controller
         $config = [
             'total' => $data['total'] ?? 0,
             'limit' => $limit,
-            'url' => './admin/room',
+            'url' => '/admin/room',
             'full' => false, //bỏ qua nếu không muốn hiển thị full page
             'param' => $url_param ?? ""
         ];
@@ -131,7 +131,7 @@ class RoomController extends Controller
             exit();
         }
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/room");
+        header("Location:". WEB_ROOT."/admin/room");
         exit();
 
     }
@@ -219,7 +219,7 @@ class RoomController extends Controller
         }
 
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/room");
+        header("Location:". WEB_ROOT."/admin/room");
         exit();
     }
 
@@ -234,13 +234,13 @@ class RoomController extends Controller
             $_SESSION['success'] = [
                 'status' => 'Success !!!'
             ];
-            header("Location:/admin/room");
+            header("Location:". WEB_ROOT."/admin/room");
             exit();
         } else {
             $_SESSION['success'] = [
                 'error' => 'Error !!!'
             ];
-            header("Location:/admin/room");
+            header("Location:". WEB_ROOT."/admin/room");
             exit();
         }
     }

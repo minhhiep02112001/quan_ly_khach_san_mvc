@@ -23,33 +23,33 @@
     <meta property="og:description" content="Website dành riêng cho hệ thống khách sạn trên toàn quốc." />
     <meta property="og:site_name" content="ATR Hotel" />
     <meta property="og:url" content="index.html" />
-    <link rel="shortcut icon" href="./public/client/uploads/logo-xs.png">
+    <link rel="shortcut icon" href="<?= WEB_ROOT?>/public/client/uploads/logo-xs.png">
     <link rel="canonical" href="index.html">
     <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link rel="StyleSheet" href="./public/client/assets/css/font-awesome.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/bootstrap.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/simple-line-icons5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/owl.carousel5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/owl.transitions5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/rateit5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/bootstrap-select.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/global_category5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/main5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/blue5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/assets/stylesheets/jednotka_green5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style_15a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/users5a50.css?t=13">
-    <link type="text/css" href="./public/client/assets/js/jquery-ui/jquery-ui.min5a50.css?t=13" rel="stylesheet" />
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/assets/css/font-awesome.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/bootstrap.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/simple-line-icons5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/owl.carousel5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/owl.transitions5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/rateit5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/bootstrap-select.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/global_category5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/main5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/blue5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/stylesheets/jednotka_green5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/style5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/style_15a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/users5a50.css?t=13">
+    <link type="text/css" href="<?= WEB_ROOT?>/public/client/assets/js/jquery-ui/jquery-ui.min5a50.css?t=13" rel="stylesheet" />
     <link rel="stylesheet"
-          href="./public/client/assets/js/select2/select2.min.css" />
+          href="<?= WEB_ROOT?>/public/client/assets/js/select2/select2.min.css" />
     <link rel="stylesheet"
-          href="./public/client/assets/js/select2/select2-bootstrap.min.css" />
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/contact25a50.css?t=13">
+          href="<?= WEB_ROOT?>/public/client/assets/js/select2/select2-bootstrap.min.css" />
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/contact25a50.css?t=13">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title></title>
 
@@ -86,7 +86,7 @@
         <div class='hero-carousel carousel-blur carousel-blur-arrows carousel-blur-pagination flexslider'>
             <ul class='slides'>
                 <li class='item'>
-                    <div class="img-item" style="background:url('./public/client/uploads/menu/1545817293.png');background-size: cover">
+                    <div class="img-item" style="background:url('<?= WEB_ROOT?>/public/client/uploads/menu/1545817293.png');background-size: cover">
                         <div class='container'>
                             <div class='row'>
                                 <div class='col-lg-24 animate'>
@@ -98,7 +98,7 @@
                     </div>
                 </li>
                 <li class='item'>
-                    <div class="img-item" style="background:url('./public/client/uploads/menu/pool_1500x720.jpg');background-size: cover">
+                    <div class="img-item" style="background:url('<?= WEB_ROOT?>/public/client/uploads/menu/pool_1500x720.jpg');background-size: cover">
                         <div class='container'>
                             <div class='row'>
                                 <div class='col-lg-24 animate'>
@@ -110,7 +110,7 @@
                     </div>
                 </li>
                 <li class='item'>
-                    <div class="img-item" style="background:url('./public/client/uploads/menu/berlingoldenbeach013.jpg');background-size: cover">
+                    <div class="img-item" style="background:url('<?= WEB_ROOT?>/public/client/uploads/menu/berlingoldenbeach013.jpg');background-size: cover">
                         <div class='container'>
                             <div class='row'>
                                 <div class='col-lg-24 animate'>
@@ -122,7 +122,7 @@
                     </div>
                 </li>
                 <li class='item'>
-                    <div class="img-item" style="background:url('./public/client/uploads/menu/book-direct-and-save-20-sgd-banner.jpg');background-size: cover">
+                    <div class="img-item" style="background:url('<?= WEB_ROOT?>/public/client/uploads/menu/book-direct-and-save-20-sgd-banner.jpg');background-size: cover">
                         <div class='container'>
                             <div class='row'>
                                 <div class='col-lg-24 animate'>
@@ -137,7 +137,7 @@
         </div>
         <section class="wow animated animatedFadeInUp fadeInUp search_row container search_contain">
             <div class="book-form overlay-black-dark bg-img-fix p-t70 mid">
-                <form class=" row_search" id="form-search" action="./search" method="get">
+                <form class=" row_search" id="form-search" action="<?= WEB_ROOT?>/search" method="get">
                     <div class="col-md-10 col-sm-8 col-12  form-group infontform selectday">
                         <input class="form-control datepicker datetimepicker4" type="text" id="start_day" name="start" value="04/10/2021" readonly="readonly" placeholder="" />
                     </div>
@@ -165,20 +165,25 @@
                                     <div class="blog-post">
                                         <div class="blog-post-image">
                                             <div class="image ">
-                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html" title="" class="effect-chico box_ribbon">
+                                                <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>" title="" class="effect-chico box_ribbon">
                                                     <img alt="" src="<?=$item['image']?>" />
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="blog-post-info text-left">
                                             <h3 class="name name-h3">
-                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html" title=""><?=$item['title']?></a>
+                                                <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>" title=""><?=$item['title']?></a>
                                             </h3>
 
                                             <div class="ratings"></div>
                                             <div class="des_booking">
                                                 <p class="description"><?= $item['title']?></p>
                                             </div>
+
+                                            <div class="des_booking">
+                                                <p class="description">Số người : <?= $item['count_people']?></p>
+                                            </div>
+
                                             <div class="discount_price">
                                                 <p class="blog-price">
                                                     <?= number_format($item['price'] , 0 , ',' ,'.')?><sup>đ</sup><span>/ngày</span>
@@ -186,9 +191,9 @@
                                             </div>
                                             <div class="col-md-24 col-sm-24 text-center ">
                                                 <hr class="line">
-                                                <a href="./room/<?= $item['slug'].'-'.$item['id'] ?>.html#booking" class="btn btn-primary pull-left">ĐẶT PHÒNG</a>
+                                                <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>#booking" class="btn btn-primary pull-left">ĐẶT PHÒNG</a>
 <!--                                                <div class="div_icon_wid">-->
-<!--												<span class="box_icon_wid box_icon_wid_hefl hidden">  <span title="WI_FI" class="pointer"><img data-toggle='tooltip' data-placement='top' title='WI_FI' class='wid_img' src=./public/client/uploads/booking-hotel/wf.png></span>  <span title="Tủ lạnh" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Tủ lạnh' class='wid_img' src=./public/client/uploads/booking-hotel/tl.png></span>  <span title="Phòng tập GYM" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Phòng tập GYM' class='wid_img' src=./public/client/uploads/booking-hotel/gm.png></span>  <span title="Phòng xong hơi" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Phòng xong hơi' class='wid_img' src=./public/client/uploads/booking-hotel/xh.jpg></span>  <span title="Bàn ăn" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Bàn ăn' class='wid_img' src=./public/client/uploads/booking-hotel/ba.png></span>  <span title="Truyền hình" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Truyền hình' class='wid_img' src=./public/client/uploads/booking-hotel/tivi.png></span>-->
+<!--												<span class="box_icon_wid box_icon_wid_hefl hidden">  <span title="WI_FI" class="pointer"><img data-toggle='tooltip' data-placement='top' title='WI_FI' class='wid_img' src=<?= WEB_ROOT?>/public/client/uploads/booking-hotel/wf.png></span>  <span title="Tủ lạnh" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Tủ lạnh' class='wid_img' src=<?= WEB_ROOT?>/public/client/uploads/booking-hotel/tl.png></span>  <span title="Phòng tập GYM" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Phòng tập GYM' class='wid_img' src=<?= WEB_ROOT?>/public/client/uploads/booking-hotel/gm.png></span>  <span title="Phòng xong hơi" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Phòng xong hơi' class='wid_img' src=<?= WEB_ROOT?>/public/client/uploads/booking-hotel/xh.jpg></span>  <span title="Bàn ăn" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Bàn ăn' class='wid_img' src=<?= WEB_ROOT?>/public/client/uploads/booking-hotel/ba.png></span>  <span title="Truyền hình" class="pointer"><img data-toggle='tooltip' data-placement='top' title='Truyền hình' class='wid_img' src=<?= WEB_ROOT?>/public/client/uploads/booking-hotel/tivi.png></span>-->
 <!--											</span>-->
 <!--                                                    <button type="button" class="pull-right btn btn-primary btn-widget" title="Tiện nghi">-->
 <!--                                                        <em class="fa fa-gift tienichphong"></em>-->
@@ -215,14 +220,14 @@
                         <div class="blog-post">
                             <div class="blog-post-image mg-bottom-10">
                                 <div class="image">
-                                    <a href="./article/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng" class="effect-chico">
+                                    <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng" class="effect-chico">
                                         <img style="height: 200px;" src="<?= $item['image']?>" alt="Làn sóng tăng vốn cấp 2 của các ngân hàng">
                                     </a>
                                 </div>
                             </div>
                             <div class="blog-post-info text-left">
                                 <h3 class="name">
-                                    <a href="./article/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng"><?= $item['title']?></a>
+                                    <a href="<?= WEB_ROOT?>/<?= $item['slug'].'-'.$item['id'] ?>.html" title="Làn sóng tăng vốn cấp 2 của các ngân hàng"><?= $item['title']?></a>
                                 </h3>
                                 <span class="info"><?= date("H:i:s d-m-Y", strtotime( $item['created_at'] ))?> , <?= $item['view']?> lượt xem </span>
                                 <p class="text"><?= $item['summary']?></p>
@@ -245,56 +250,56 @@
                 <div class="row flat-large flat-default">
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/189113.png" alt="Wifi"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/189113.png" alt="Wifi"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="Wifi">Wifi</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/1287713.png" alt="Hồ bơi"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/1287713.png" alt="Hồ bơi"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="Hồ bơi">Hồ bơi</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/141029.png" alt="TV Siêu lớn"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/141029.png" alt="TV Siêu lớn"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="TV Siêu lớn">TV Siêu lớn</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/1297972.png" alt="Bàn ăn riêng"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/1297972.png" alt="Bàn ăn riêng"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="Bàn ăn riêng">Bàn ăn riêng</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/1308521.png" alt="Massage"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/1308521.png" alt="Massage"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="Massage">Massage</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/1289670.png" alt="Phòng xông hơi"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/1289670.png" alt="Phòng xông hơi"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="Phòng xông hơi">Phòng xông hơi</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/1177617.png" alt="Phòng tập GYM"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/1177617.png" alt="Phòng tập GYM"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="Phòng tập GYM">Phòng tập GYM</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-sm-24 col-xs-24">
                         <div class="activity-item text-center px-20 py-40 mb-30 p-t40 m-b10 animation-card">
-                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="./public/client/uploads/freecontent/1268955.png" alt="máy giặt"></div></div>
+                            <div class="icon mb-4"><div class="flaticon-hot-coffee-rounded-cup-on-a-plate-from-side-view"><img src="<?= WEB_ROOT?>/public/client/uploads/freecontent/1268955.png" alt="máy giặt"></div></div>
                             <h6 class="down-line-center text-uppercase pb-3 mb-3"><a href="#" title="máy giặt">máy giặt</a></h6>
                             <p>Khách sạn được phủ sóng wifi mạnh mẽ, phục vụ cho quý khách với chuyến đi thành công nhất</p>
                         </div>
@@ -329,7 +334,7 @@
     <div class="logo_footer">
         <div class="row">
             <div class="col-xs-24 col-md-24 col-sm-24 no-padding">
-                <img class="social" src="./public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" />
+                <img class="social" src="<?= WEB_ROOT?>/public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel" />
                 <!-- <h3 class="visible-xs-inline-block">Chúng tôi trên mạng xã hội</h3> -->
                 <div class="social-media">
                     <a href="https://www.facebook.com/nukeviet" target="_blank"><i class="fa fa-facebook fb"></i></a>
@@ -596,13 +601,13 @@
         </div>
     </div>
 </div>
-<script src="./public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
-<script data-ad-client="ca-pub-6482774583325006" async src="./public/client/./public/client/pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<script src="<?= WEB_ROOT?>/public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
+<script data-ad-client="ca-pub-6482774583325006" async src="<?= WEB_ROOT?>/public/client/<?= WEB_ROOT?>/public/client/pagead2.googlesyndication.com/pagead/js/f.txt"></script>
 <script>var nv_base_siteurl="http://bookinghotel.mynukeviet.com/",nv_lang_data="vi",nv_lang_interface="vi",nv_name_variable="nv",nv_fc_variable="op",nv_lang_variable="language",nv_module_name="home",nv_func_name="main",nv_is_user=0, nv_my_ofs=7,nv_my_abbr="+07",nv_cookie_prefix="nv4",nv_check_pass_mstime=1738000,nv_area_admin=0,nv_safemode=0,theme_responsive=1,nv_is_recaptcha=0;</script>
-<script src="./public/client/assets/js/language/vi5a50.js?t=13"></script>
-<script src="./public/client/assets/js/global5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/main5a50.js?t=13"></script>
-<script type="text/javascript" src="./public/client/themes/hotel01/js/users5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/assets/js/language/vi5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/assets/js/global5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/main5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/users5a50.js?t=13"></script>
 <script type="text/javascript" data-show="after">
     $(function() {
         checkWidthMenu();
@@ -619,7 +624,7 @@
         }
     });
 </script>
-<script src="./public/client/themes/hotel01/assets/javascripts/plugins/flexslider/jquery.flexslider.min5a50.js?t=13" type="text/javascript"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/javascripts/plugins/flexslider/jquery.flexslider.min5a50.js?t=13" type="text/javascript"></script>
 <script>
     $(window).on('load', function() {
         var $allSlides, $flexslider;
@@ -651,8 +656,8 @@
         }
     });
 </script>
-<script type="text/javascript" src="./public/client/assets/js/jquery-ui/jquery-ui.min5a50.js?t=13"></script>
-<script type="text/javascript" src="./public/client/assets/js/language/jquery.ui.datepicker-vi5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT?>/public/client/assets/js/jquery-ui/jquery-ui.min5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT?>/public/client/assets/js/language/jquery.ui.datepicker-vi5a50.js?t=13"></script>
 <script>
     $(".datepicker").datepicker({
         dateFormat : "dd/mm/yy",
@@ -665,9 +670,9 @@
     });
 </script>
 <script type="text/javascript"
-        src="./public/client/assets/js/select2/select2.min.js"></script>
+        src="<?= WEB_ROOT?>/public/client/assets/js/select2/select2.min.js"></script>
 <script type="text/javascript"
-        src="./public/client/assets/js/select2/i18n/vi.js"></script>
+        src="<?= WEB_ROOT?>/public/client/assets/js/select2/i18n/vi.js"></script>
 <script type="text/javascript">
     //<![CDATA[
     var confirm_confirm_payment = '';
@@ -782,7 +787,7 @@
         });
     });
 </script>
-<script src="./public/client/themes/hotel01/js/contact25a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/contact25a50.js?t=13"></script>
 <script>
     ( function(d, s, id) {
         var js,
@@ -791,22 +796,22 @@
             return;
         js = d.createElement(s);
         js.id = id;
-        //js.src = "./public/client/./public/client/connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1813595862224723";
+        //js.src = "<?= WEB_ROOT?>/public/client/<?= WEB_ROOT?>/public/client/connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1813595862224723";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<script src="./public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/echo.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/jquery.easing-1.3.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-slider.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/jquery.rateit.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/lightbox.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-select.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/wow.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/script5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/scripts5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/echo.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/jquery.easing-1.3.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap-slider.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/jquery.rateit.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/lightbox.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap-select.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/wow.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/script5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/scripts5a50.js?t=13"></script>
 <script>
     $(window).resize(function() {
         console.log('resize called');
@@ -845,10 +850,18 @@
     }
 </script>
 <script
-    src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
+    src="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script
-    src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
-
+    src="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>-->
+<script>
+    $(document).ready(function () {
+        $('form').submit(function () {
+            $.LoadingOverlay("show");
+        });
+    });
+</script>
 <!--Js search room-->
 <script>
     $(document).ready(function () {

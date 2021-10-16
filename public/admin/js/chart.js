@@ -44,7 +44,7 @@ $(function () {
 function getCountOrder($start_day, $end_day) {
     var item = {};
     $.ajax({
-        url: '/admin/ajax/chart',
+        url: 'admin/ajax/chart',
         data: {
             start_day: $start_day,
             end_day: $end_day

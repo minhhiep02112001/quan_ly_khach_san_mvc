@@ -21,7 +21,7 @@ class AuthController extends Controller
     function login()
     {
         if (isset($_SESSION['admin.login'])) {
-            header("Location:/admin");
+            header("Location:". WEB_ROOT."/admin");
             exit();
         }
 
@@ -78,7 +78,7 @@ class AuthController extends Controller
         }
 
         $_SESSION['admin.login'] = $user;
-        header("Location:/admin");
+        header("Location:". WEB_ROOT."/admin");
         exit();
     }
 
@@ -94,7 +94,7 @@ class AuthController extends Controller
     function information()
     {
         if (!isset($_SESSION['admin.login'])) {
-            header("Location:/admin/login");
+            header("Location:". WEB_ROOT."/admin/login");
             exit();
         }
 
@@ -174,7 +174,7 @@ class AuthController extends Controller
             ->where('id', '=', $_SESSION['admin.login']['id'])->find();
 
         $_SESSION['success'] = ['status' => 'Success !!!'];
-        header("Location:/admin/information");
+        header("Location:". WEB_ROOT."/admin/information");
         exit();
     }
 

@@ -138,14 +138,12 @@ if(isset($_SESSION['validate_data'])){
                                     <div class="item">
                                         <div class="clearfix" style="max-width: 474px;">
                                             <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                                                <li data-thumb="./public/client/uploads/image/booking-hotel_0_20181204-151426_400-400.jpg">
+                                                <li data-thumb="<?= $room['image']?>">
                                                     <a href="#" class="img_loop_detail">
                                                         <img class="img-thumbnail m-bottom"
-                                                             src="./public/client/uploads/image/booking-hotel_0_20181204-151426_400-400.jpg">
+                                                             src="<?= $room['image']?>">
                                                     </a>
                                                 </li>
-
-
                                             </ul>
                                         </div>
                                     </div>
@@ -155,6 +153,7 @@ if(isset($_SESSION['validate_data'])){
                                 <div class="product-info">
                                     <h1 class="name"><?= $room['title'] ?? '' ?></h1>
                                     <div class="description-container m-t-20"><?= $room['title'] ?? '' ?></div>
+                                    <div class="description-container m-t-20">Số người : <?= $room['count_people']?></div>
                                     <div class="row">
                                         <div class="col-md-24 col-xs-24 col-sm-24 m-bottom">
                                             <div class="col-xs-24 m-t-20">
@@ -228,7 +227,7 @@ if(isset($_SESSION['validate_data'])){
                                                         <div class="col-xs-24 col-sm-24 col-md-24 border border-right">
                                                             <div id="fb-root"></div>
                                                             <div class="fb-comments"
-                                                                 data-href="<?= (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>"
+                                                                 data-href="<?= WEB_ROOT.'/'.$_SERVER['REQUEST_URI']?>"
                                                                  data-width="100%" data-numposts="5"></div>
                                                         </div>
                                                     </div>
@@ -239,7 +238,9 @@ if(isset($_SESSION['validate_data'])){
                                     <div id="booking" class="tab-pane in">
                                         <div class="product-tab">
                                             <div class="frm-booking">
-
+                                                <?php if(!isset($_SESSION['user.login'])):?>
+                                                    <p style="color: red; font-size: 16px;padding: 16px 30px;"> <u>Bạn cần đăng nhập để đặt phòng</u> </p>
+                                                <?php endif;?>
                                                 <?php if(isset($error)):?>
                                                     <div class="error">
                                                         <ul style="margin-left: 65px;margin-bottom: 10px; list-style: disc">
@@ -250,7 +251,7 @@ if(isset($_SESSION['validate_data'])){
                                                         <hr style="margin-top: 15px; margin-bottom: 25px;">
                                                     </div>
                                                 <?php endif;?>
-                                                <form class="form-horizontal" action="./booked/room" method="post" id="frm-booking">
+                                                <form class="form-horizontal" action="<?= WEB_ROOT?>/booked/room" method="post" id="frm-booking">
                                                     <input type="hidden" name="room_id" value="<?= $room['id']?>"/>
                                                     <input type="hidden" name="price" value="<?= $room['price']?>"/>
 
@@ -950,7 +951,7 @@ if(isset($_SESSION['validate_data'])){
         var start = $(this).find('#start_day').val();
         var end = $(this).find('#end_day').val();
         if(start > end){
-            alert("Ngày bắt đầu phải nhỏ hơn ngày kết thúc");
+            alert("Ngày nhận phòng phải nhỏ hơn ngày trả");
             return false;
         }
 

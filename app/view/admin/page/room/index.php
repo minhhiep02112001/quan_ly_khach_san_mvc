@@ -32,10 +32,13 @@ if (isset($_SESSION['success'])) {
                             <div class="col-xs-3">
                                 <input class="form-control" name="summary" type="text" value="<?= $_GET['summary'] ??'' ?>" placeholder="Mô tả ngắn ...">
                             </div>
-                            <div class="col-xs-3">
+                            <div class="col-xs-2">
+                                <input class="form-control" name="price" type="text" value="<?= $_GET['price'] ??'' ?>" placeholder="Số Giá ...">
+                            </div>
+                            <div class="col-xs-2">
                                 <input class="form-control" name="count_people" type="text" value="<?= $_GET['count_people'] ??'' ?>" placeholder="Số người ...">
                             </div>
-                            <div class="col-xs-3">
+                            <div class="col-xs-2">
                                 <button type="submit" class="btn btn-primary" style="width: 100%;">Tìm kiếm</button>
                             </div>
                         </div>

@@ -14,13 +14,19 @@ class PaymentController extends Controller
     public function __construct()
     {
         global $config;
+        if (!isset($_SESSION['user.login'])) {
+            header("Location:". WEB_ROOT."/login");
+            exit();
+        }
         $this->_db = new Database();
         $this->_config = $config['vnpay'];
     }
 
     public function index($id)
     {
+
         $order = $this->_db->table('orders')->where('id' ,'=' , $id)->where('status' , '=' ,1)->find();
+
         $_SESSION['inforBeforePayment'] = [
             'url_prev' => $_SERVER['HTTP_REFERER'],
             'order' =>$order
@@ -72,11 +78,9 @@ class PaymentController extends Controller
 
     function vnPayReturn()
     {
-        if(isset($_SESSION['inforBeforePayment'])){
-            print_r($_SESSION['inforBeforePayment']);
-        }
+
         extract($_SESSION['inforBeforePayment']);
-        print_r($_GET);
+
         //unset($_SESSION['inforBeforePayment']);
         if($_GET['vnp_ResponseCode'] == "00") {
             $sql = "UPDATE `orders` SET  orders.`status` = 2 , orders.`payment` = 1 WHERE orders.id = {$order['id']}";

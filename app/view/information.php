@@ -41,29 +41,29 @@ if(isset($_SESSION['error_vn_pay'])){
           content="Liên hệ - Liên hệ - http&#x3A;&#x002F;&#x002F;bookinghotel.mynukeviet.com&#x002F;vi&#x002F;contact&#x002F;"/>
     <meta property="og:site_name" content="ATR Hotel"/>
     <meta property="og:url" content="index.html"/>
-    <link rel="shortcut icon" href="./public/client/uploads/logo-xs.png">
+    <link rel="shortcut icon" href="<?= WEB_ROOT?>/public/client/uploads/logo-xs.png">
     <link rel="canonical" href="index.html">
     <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link rel="StyleSheet" href="./public/client/assets/css/font-awesome.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/bootstrap.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/simple-line-icons5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/owl.carousel5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/owl.transitions5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/rateit5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/bootstrap-select.min5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/global_category5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/main5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/blue5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/assets/stylesheets/jednotka_green5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style_15a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/contact5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/hotel01/css/users5a50.css?t=13">
-    <link rel="StyleSheet" href="./public/client/themes/default/css/popup5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/assets/css/font-awesome.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/bootstrap.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/simple-line-icons5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/owl.carousel5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/owl.transitions5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/rateit5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/bootstrap-select.min5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/global_category5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/main5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/blue5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/stylesheets/jednotka_green5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/style5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/menu_mobile_news105a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/style_15a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/style.responsive5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/contact5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/hotel01/css/users5a50.css?t=13">
+    <link rel="StyleSheet" href="<?= WEB_ROOT?>/public/client/themes/default/css/popup5a50.css?t=13">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -234,7 +234,7 @@ if(isset($_SESSION['error_vn_pay'])){
                                 <div class="panel-heading">Thay đổi thông tin</div>
                                 <div class="panel-body loadContactForm">
                                     <div class="lien-he">
-                                        <form method="post" action="./information/update" >
+                                        <form method="post" action="<?= WEB_ROOT?>/information/update" >
                                             <?php if(isset($error)):?>
                                                 <div class="error">
                                                     <ul style="margin-bottom: 10px;">
@@ -256,7 +256,7 @@ if(isset($_SESSION['error_vn_pay'])){
                                             <div class="form-group clearfix">
                                                 <p>Email:</p>
                                                 <div class="input-group">
-                                                    <input type="email" maxlength="60" value="<?= $_SESSION['user.login']['email']?>" name="email"
+                                                    <input type="email" readonly maxlength="60" value="<?= $_SESSION['user.login']['email']?>" name="email"
                                                            class="form-control required" placeholder="Email" />
                                                 </div>
                                             </div>
@@ -306,14 +306,14 @@ if(isset($_SESSION['error_vn_pay'])){
     <div class="logo_footer">
         <div class="row">
             <div class="col-xs-24 col-md-24 col-sm-24 no-padding">
-                <img class="social" src="./public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel"/>
+                <img class="social" src="<?= WEB_ROOT?>/public/client/uploads/logo_1.png" width="186" height="44" alt="ATR Hotel"/>
                 <!-- <h3 class="visible-xs-inline-block">Chúng tôi trên mạng xã hội</h3> -->
                 <div class="social-media">
                     <a href="https://www.facebook.com/nukeviet" target="_blank"><i class="fa fa-facebook fb"></i></a>
                     <a href="https://www.google.com/+nukeviet" target="_blank"><i class="fa fa-google-plus gp"></i></a>
                     <a href="https://www.youtube.com/user/nukeviet" target="_blank"><i class="fa fa-youtube yt"></i></a>
                     <a href="https://twitter.com/nukeviet" target="_blank"><i class="fa fa-twitter tt"></i></a>
-                    <a href="../feeds/index.html"><i class="fa fa-rss rs"></i></a>
+                    <a href=".<?= WEB_ROOT?>/feeds/index.html"><i class="fa fa-rss rs"></i></a>
                 </div>
 
             </div>
@@ -328,9 +328,9 @@ if(isset($_SESSION['error_vn_pay'])){
                     </div>
                     <div class="module-body">
                         <ul class='list-unstyled superfish'>
-                            <li><a href="../about/index.html" title="Giới thiệu">Giới thiệu</a></li>
-                            <li><a href="../news/index.html" title="Tin Tức">Tin Tức</a></li>
-                            <li><a href="../hop-dap/index.html" title="Hỏi đáp">Hỏi đáp</a></li>
+                            <li><a href=".<?= WEB_ROOT?>/about/index.html" title="Giới thiệu">Giới thiệu</a></li>
+                            <li><a href=".<?= WEB_ROOT?>/news/index.html" title="Tin Tức">Tin Tức</a></li>
+                            <li><a href=".<?= WEB_ROOT?>/hop-dap/index.html" title="Hỏi đáp">Hỏi đáp</a></li>
                             <li><a href="index.html" title="Liên hệ">Liên hệ</a></li>
                         </ul>
                     </div>
@@ -341,13 +341,13 @@ if(isset($_SESSION['error_vn_pay'])){
                     </div>
                     <div class="module-body">
                         <ul class='list-unstyled superfish'>
-                            <li><a href="../guide-tourist/huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng
+                            <li><a href=".<?= WEB_ROOT?>/guide-tourist/huong-dan-thanh-toan.html" title="Hướng dẫn thanh toán">Hướng
                                     dẫn thanh toán</a></li>
-                            <li><a href="../guide-tourist/huong-dan-dat-phong.html" title="Hướng dẫn đặt phòng">Hướng
+                            <li><a href=".<?= WEB_ROOT?>/guide-tourist/huong-dan-dat-phong.html" title="Hướng dẫn đặt phòng">Hướng
                                     dẫn đặt phòng</a></li>
-                            <li><a href="../guide-tourist/index.html" title="Hướng dẫn đặt phòng trực tuyến">Hướng dẫn
+                            <li><a href=".<?= WEB_ROOT?>/guide-tourist/index.html" title="Hướng dẫn đặt phòng trực tuyến">Hướng dẫn
                                     đặt phòng trực tuyến</a></li>
-                            <li><a href="../guide-tourist/huong-dan-tim-kiem-can-ho.html"
+                            <li><a href=".<?= WEB_ROOT?>/guide-tourist/huong-dan-tim-kiem-can-ho.html"
                                    title="Hướng dẫn tìm kiếm căn hộ">Hướng dẫn tìm kiếm căn hộ</a></li>
                         </ul>
                     </div>
@@ -607,18 +607,18 @@ if(isset($_SESSION['error_vn_pay'])){
         </div>
     </div>
 </div>
-<script src="./public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/assets/js/jquery/jquery.min5a50.js?t=13"></script>
 
 <script>var nv_base_siteurl = "http://bookinghotel.mynukeviet.com/", nv_lang_data = "vi", nv_lang_interface = "vi",
         nv_name_variable = "nv", nv_fc_variable = "op", nv_lang_variable = "language", nv_module_name = "contact",
         nv_func_name = "main", nv_is_user = 0, nv_my_ofs = 7, nv_my_abbr = "+07", nv_cookie_prefix = "nv4",
         nv_check_pass_mstime = 1738000, nv_area_admin = 0, nv_safemode = 0, theme_responsive = 1,
         nv_is_recaptcha = 0;</script>
-<script src="./public/client/assets/js/language/vi5a50.js?t=13"></script>
-<script src="./public/client/assets/js/global5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/contact5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/main5a50.js?t=13"></script>
-<script type="text/javascript" src="./public/client/themes/hotel01/js/users5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/assets/js/language/vi5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/assets/js/global5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/contact5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/main5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/users5a50.js?t=13"></script>
 <script type="text/javascript" data-show="after">
     $(function () {
         checkWidthMenu();
@@ -634,24 +634,24 @@ if(isset($_SESSION['error_vn_pay'])){
         }
     });
 </script>
-<script type="text/javascript" src="./public/client/themes/default/js/popup5a50.js?t=13"></script>
+<script type="text/javascript" src="<?= WEB_ROOT?>/public/client/themes/default/js/popup5a50.js?t=13"></script>
 
 <script type="text/javascript"
         src="http://maps.google.com/maps/api/js?key=AIzaSyC8ODAzZ75hsAufVBSffnwvKfTOT6TnnNQ"></script>
 
 
-<script src="./public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/echo.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/jquery.easing-1.3.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-slider.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/jquery.rateit.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/lightbox.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/bootstrap-select.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/wow.min5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/script5a50.js?t=13"></script>
-<script src="./public/client/themes/hotel01/js/scripts5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap-hover-dropdown.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/owl.carousel.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/echo.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/jquery.easing-1.3.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap-slider.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/jquery.rateit.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/lightbox.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/bootstrap-select.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/wow.min5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/script5a50.js?t=13"></script>
+<script src="<?= WEB_ROOT?>/public/client/themes/hotel01/js/scripts5a50.js?t=13"></script>
 <script>
     $(window).resize(function () {
         console.log('resize called');
@@ -690,9 +690,9 @@ if(isset($_SESSION['error_vn_pay'])){
     }
 </script>
 <script
-        src="./public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
+        src="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/javascripts/jednotka.js"></script>
 <script
-        src="./public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
+        src="<?= WEB_ROOT?>/public/client/themes/hotel01/assets/javascripts/plugins/modernizr/modernizr.custom.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript">
     $(document).on('click' , '.btn-cancel-order',function (){
@@ -708,7 +708,7 @@ if(isset($_SESSION['error_vn_pay'])){
 
     $(document).on('click' , '.btn-vnpay' , function (){
        var id = $(this).data('id');
-       location.href="/online/payment/"+id;
+       location.href="online/payment/"+id;
     });
 
     $(document).ready(function () {
@@ -721,6 +721,17 @@ if(isset($_SESSION['error_vn_pay'])){
         });
     });
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>-->
+<script>
+    $(document).ready(function () {
+        $('form').submit(function () {
+            $.LoadingOverlay("show");
+        });
+    });
+</script>
+
 </body>
 <!-- SiteModal Required!!! -->
 <div id="sitemodal" class="modal fade" role="dialog">

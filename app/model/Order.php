@@ -44,8 +44,13 @@ class Order extends  Model
         return $this->table($this->setTable())->delete($column , $value);
     }
 
-    public function  getListOrderDetail($order_id){
-        $sql = "SELECT  room.title ,  room.slug ,  room.price as 'room_price' ,  room.image , order_detail.price ,  order_detail.count_people as 'order_people' FROM order_detail JOIN room ON order_detail.room_id = room.id WHERE  order_id = $order_id";
+    public function  getOrderDetail($order_id){
+        $sql = "SELECT orders.`code`, orders.`user_id`, orders.`room_id`, orders.`name`, orders.`email`, orders.`phone`, orders.`price_room`,
+                orders.`count_people`, orders.`total`, orders.`status`, orders.`start`, orders.`end`, orders.`sum_day`, orders.`contents`, 
+                orders.`payment`, orders.`created_at` , room.`title`, room.`image` FROM orders  
+                LEFT JOIN room ON orders.room_id = room.id  
+                WHERE orders.id = $order_id";
+
         $query = $this->_db->query($sql);
 
         if (empty($query)) {
